@@ -1,0 +1,19 @@
+{
+  "name": "masxmenos",
+  "version": "1.0.0",
+  "description": "Web Aplication of MasXMenos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B12-Aplicacion-Web/AppWebGrupo1.git"
+  },
+  "author": "Gupo1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/B12-Aplicacion-Web/AppWebGrupo1/issues"
+  },
+  "homepage": "https://github.com/B12-Aplicacion-Web/AppWebGrupo1#readme"
+}
