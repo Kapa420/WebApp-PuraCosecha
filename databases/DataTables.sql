@@ -18,7 +18,7 @@ NULL,
 PRIMARY KEY (`idProducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
- CREATE TABLE `productores` (
+CREATE TABLE `productores` (
 `idProductor` bigint NOT NULL,
 `nombre` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
 `poblacion` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
