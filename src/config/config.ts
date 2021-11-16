@@ -5,4 +5,4 @@ export default {
     DB_PASSWORD: process.env.DB_PASSWORD || '',
     DATABASE: process.env.DATABASE || 'appweb',
     DB_PORT: process.env.DB_PORT || 
-}
+};
