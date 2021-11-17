@@ -14,9 +14,10 @@ clienteRoutes(app)
 productoresRoutes(app)
 
 app.use(errorHandler);
-app.get(`\aguacate`, async(req, res) => {
-  res.status(404).json({message: "Todo corre normal. :)"});
-})
+
+app.get('/prueba/', async(req, res, next) => {
+  res.status(404).json({ message: "todo ok. :)"});
+});
 
 app.listen(config.PORT, () => {
   return console.log(`servidor corriendo en el puerto ${config.PORT}`);
