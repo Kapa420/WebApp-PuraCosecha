@@ -25,7 +25,7 @@ CREATE TABLE `productores` (
 `municipio` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
 `direccion` varchar(100) DEFAULT NULL,
 `telefono` bigint DEFAULT NULL,
-`e-mail` varchar(100) DEFAULT NULL,
+`Email` varchar(100) DEFAULT NULL,
 `tipoProducto` varchar(100) NOT NULL,
 `idProducto` bigint NOT NULL,
 PRIMARY KEY (`idProductor`),
