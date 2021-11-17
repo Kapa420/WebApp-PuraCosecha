@@ -59,7 +59,7 @@ const agregarCliente = async (req, res, next) => {
 }
 
 const eliminarCliente = async (req, res, next) => {
-  executeQuery(`DELETE FROM usuario WHERE idCliente = '${req.params.id}'`).then((response) => {res.json({
+  executeQuery(`DELETE FROM cliente WHERE idCliente = '${req.params.id}'`).then((response) => {res.json({
       message: response.affectedRows > 0 ? `deleted`: 'No existe registro con id: ${req.params.id}'});
     }).catch((error) => {
       next(error)

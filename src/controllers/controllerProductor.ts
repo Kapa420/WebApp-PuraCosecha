@@ -1,7 +1,18 @@
 import executeQuery from "../services/mysql.service"
 
 const obtenerProductores= async(req,res,next) => {
-    await executeQuery('SELECT * FROM productores').then(response => {
+    await executeQuery(
+    `SELECT productores.nombre,
+            productores.poblacion,
+            productores.municipio,
+            productores.direccion,
+            productores.telefono,
+            productores.Email,
+            productores.tipoProducto
+            producto.nombreProducto
+            FROM productores
+            INNER JOIN producto
+            ON productores.idProducto = producto.idProducto`).then(response => {
         const data = {
             message: `${response.length} datos encontrados`,
             data: response.length > 0 ? response : null
@@ -15,7 +26,19 @@ const obtenerProductores= async(req,res,next) => {
 const obtenerProductor= async(req, res, next) => {
     const {id} = req.params;
     try{
-        const response = await executeQuery(`SELECT * FROM productores WHERE idProductores = ${id}`);
+        const response = await executeQuery(
+          `SELECT productores.nombre,
+                  productores.poblacion,
+                  productores.municipio,
+                  productores.direccion,
+                  productores.telefono,
+                  productores.Email,
+                  productores.tipoProducto
+                  producto.nombreProducto
+          FROM productores
+          INNER JOIN producto
+          ON productores.idProducto = producto.idProducto
+          WHERE productores.idProductor = ${id}`);
         const data = {
             message: `${response.length} datos encontrados`,
             data: response.length > 0 ? response[0] : null
