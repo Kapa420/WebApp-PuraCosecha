@@ -1,41 +1,53 @@
 import executeQuery from "../services/mysql.service";
 
 const obtenerCliente = async(req, res, next) => {
-    const {id} = req.params;
-    try{
-    const response = await executeQuery(`SELECT * FROM cliente where idCliente = ${id}`);
-    const data = {
+  const {id} = req.params;
+  try{
+    const response = await executeQuery(`
+      SELECT nombre,
+             apellido,
+             direccion,
+             telefono,
+             email
+      FROM cliente WHERE id_cliente = ${id}`);
+      const data = {
       message: `${response.length} datos encontrados`,
       data: response.length > 0 ? response[0] : null
         };
         res.json(data);
     }catch(error){
-        next(error);
+      next(error);
     }
 }
 
 const obtenerClientes = async(req, res, next) => {
-    await executeQuery('SELECT * FROM cliente').then(response => {
-        const data = {
-            message: `${response.length} datos encontrados`,
-            data: response.length > 0 ? response : null
-        };
-        res.json(data);
-    }).catch(error => {
-        next(error);
-    });
+  await executeQuery(
+      `SELECT nombre,
+              apellido,
+              direccion,
+              telefono,
+              email
+        FROM cliente`).then(response => {
+  const data = {
+    message: `${response.length} datos encontrados`,
+    data: response.length > 0 ? response : null
+  };
+  res.json(data);
+}).catch(error => {
+  next(error);
+});
 }
 
 const actualizarCliente = async(req, res, next) => {
-  const {nombre, telefono, Email, direccion, municipio} = req.body;
+  const {nombre, apellido, telefono, email, direccion, password} = req.body;
   const {id} = req.params;
   executeQuery(`UPDATE cliente SET nombre = '${nombre}',
-                                   telefono = '${telefono}',
-                                   Email = '${Email}',
+                                   apellido = '${apellido}',
                                    direccion = '${direccion}',
-                                   municipio = '${municipio}'
-                                   WHERE idCliente = '${id}'`)
-                                   .then((response) => {
+                                   telefono = '${telefono}',
+                                   email = '${email}',
+                                   password = '${password}'
+                                   WHERE id_cliente = '${id}'`).then((response) => {
   console.log(response);
   res.json({message: response.affectedRows > 0 ? 'updated' : `No existe registro con id: ${req.params.id}`});
   }).catch((error) => {
@@ -44,11 +56,26 @@ const actualizarCliente = async(req, res, next) => {
 }
 
 const agregarCliente = async (req, res, next) => {
-  const {nombre, telefono, Email, direccion, municipio} = req.body;
+  const {nombre, apellido, telefono, email, direccion, password} = req.body;
   try {
     const response = await executeQuery(`INSERT INTO cliente
-      (nombre, telefono, Email, direccion, municipio) VALUES
-      ('${nombre}',${telefono}', '${Email}', '${direccion}', '${municipio}')`);
+      (
+        id_cliente,
+        nombre,
+        apellido,
+        direccion,
+        telefono,
+        email,
+        password
+      ) VALUES
+      (
+        NULL,
+        '${nombre}',
+        '${apellido}',
+        '${direccion}',
+        '${telefono}',
+        '${email}',
+        '${password}')`);
       res.status(201).json({
         message: 'created',
         id: response.insertId
@@ -59,7 +86,9 @@ const agregarCliente = async (req, res, next) => {
 }
 
 const eliminarCliente = async (req, res, next) => {
-  executeQuery(`DELETE FROM cliente WHERE idCliente = '${req.params.id}'`).then((response) => {res.json({
+  executeQuery(`DELETE FROM cliente WHERE id_cliente = '${req.params.id}'`).then(
+    (response) => {
+      res.json({
       message: response.affectedRows > 0 ? `deleted`: 'No existe registro con id: ${req.params.id}'});
     }).catch((error) => {
       next(error)
