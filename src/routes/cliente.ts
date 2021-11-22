@@ -1,5 +1,7 @@
 import { Router } from 'express';
-import {actualizarCliente, agregarCliente, eliminarCliente, obtenerCliente, obtenerClientes} from "../controllers/controllerCliente";
+import {actualizarCliente, agregarCliente,
+        eliminarCliente, obtenerCliente,
+        obtenerClientes} from "../controllers/controllerCliente";
 import isAdmin from "../middlewares/admin";
 
 const clienteRoutes=(app)=>{
