@@ -1,65 +1,65 @@
-create table if not exists cliente
+CREATE database if NOT EXISTS appweb1;
+
+CREATE TABLE if NOT EXISTS cliente
 (
-    id_cliente bigint auto_increment
-        primary key,
-    nombre     varchar(50)  not null,
-    apellido   varchar(50)  not null,
-    direccion  varchar(100) null,
-    telefono   bigint       not null,
-    email      varchar(100) not null,
-    password   varchar(50)  not null
+    id_cliente BIGINT AUTO_INCREMENT
+        PRIMARY KEY,
+    nombre     VARCHAR(50)  NOT NULL,
+    apellido   VARCHAR(50)  NOT NULL,
+    direccion  VARCHAR(100) NULL,
+    telefono   BIGINT       NOT NULL,
+    email      VARCHAR(100) NOT NULL,
+    password   VARCHAR(50)  NOT NULL
 );
 
-create table if not exists factura
+CREATE TABLE if NOT EXISTS factura
 (
-    id_factura bigint auto_increment
-        primary key,
-    id_cliente bigint not null,
-    fecha      date   not null,
-    constraint factura_cliente_id_cliente_fk
-        foreign key (id_cliente) references cliente (id_cliente)
+    id_factura BIGINT AUTO_INCREMENT
+        PRIMARY KEY,
+    id_cliente BIGINT NOT NULL,
+    fecha      DATE   NOT NULL,
+    CONSTRAINT factura_cliente_id_cliente_fk
+        FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente)
 );
 
-create table if not exists productor
+CREATE TABLE if NOT EXISTS productor
 (
-    id_productor bigint auto_increment
-        primary key,
-    nombre       varchar(50)  not null,
-    apellido     varchar(100) null,
-    poblacion    varchar(100) null,
-    direccion    varchar(100) null,
-    telefono     bigint       not null,
-    email        varchar(100) null,
-    password     varchar(200) null
+    id_productor BIGINT AUTO_INCREMENT
+        PRIMARY KEY,
+    nombre       VARCHAR(50)  NOT NULL,
+    apellido     VARCHAR(100) NULL,
+    poblacion    VARCHAR(100) NULL,
+    direccion    VARCHAR(100) NULL,
+    telefono     BIGINT       NOT NULL,
+    email        VARCHAR(100) NULL,
+    password     VARCHAR(200) NULL
 );
 
-create table if not exists producto
+CREATE TABLE if NOT EXISTS producto
 (
-    id_producto        bigint auto_increment,
-    nombre_producto    varchar(50) not null,
-    categoria_producto varchar(50) null,
-    precio             int         not null,
-    id_productor       bigint      null,
-    constraint producto_id_producto_uindex
+    id_producto        BIGINT AUTO_INCREMENT,
+    nombre_producto    VARCHAR(50) NOT NULL,
+    categoria_producto VARCHAR(50) NULL,
+    precio             INT         NOT NULL,
+    id_productor       BIGINT      NULL,
+    CONSTRAINT producto_id_producto_uindex
         unique (id_producto),
-    constraint producto_productor_id_productor_fk
-        foreign key (id_productor) references productor (id_productor)
+    CONSTRAINT producto_productor_id_productor_fk
+        FOREIGN KEY (id_productor) REFERENCES productor (id_productor)
 );
 
-alter table producto
-    add primary key (id_producto);
+alter TABLE producto
+    add PRIMARY KEY (id_producto);
 
-create table if not exists detalle
+CREATE TABLE if NOT EXISTS detalle
 (
-    id_detalle  bigint auto_increment
-        primary key,
-    id_producto bigint not null,
-    id_factura  bigint not null,
-    cantidad    int    not null,
-    constraint detalle_factura_id_factura_fk
-        foreign key (id_factura) references factura (id_factura),
-    constraint detalle_producto_id_producto_fk
-        foreign key (id_producto) references producto (id_producto)
+    id_detalle  BIGINT AUTO_INCREMENT
+        PRIMARY KEY,
+    id_producto BIGINT NOT NULL,
+    id_factura  BIGINT NOT NULL,
+    cantidad    int    NOT NULL,
+    CONSTRAINT detalle_factura_id_factura_fk
+        FOREIGN KEY (id_factura) REFERENCES factura (id_factura),
+    CONSTRAINT detalle_producto_id_producto_fk
+        FOREIGN KEY (id_producto) REFERENCES producto (id_producto)
 );
-
-
