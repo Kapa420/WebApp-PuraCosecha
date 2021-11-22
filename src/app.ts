@@ -2,6 +2,8 @@ import express from 'express';
 import clienteRoutes from "./routes/cliente";
 import productoresRoutes from './routes/productores';
 import productoRoutes from './routes/producto';
+import facturaRoutes from './routes/factura'
+import detalleRoutes from './routes/detalle'
 import config from "./config/config";
 import errorHandler from './middlewares/erros';
 import isAdmin from './middlewares/admin';
@@ -14,6 +16,8 @@ app.use(express.urlencoded({ extended: true}));
 clienteRoutes(app)
 productoresRoutes(app)
 productoRoutes(app)
+facturaRoutes(app)
+detalleRoutes(app)
 
 app.use(errorHandler);
 
