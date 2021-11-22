@@ -14,5 +14,4 @@ const clienteRoutes=(app)=>{
       router.delete('/eliminarCliente/:id',eliminarCliente);
 
 }
-// uso export para que pueda exportar y luego en .appts se pueda importar
 export default clienteRoutes
