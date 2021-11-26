@@ -14,11 +14,15 @@
             Acceder
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="src\app\components\inicio-sesion\inicio-sesion.component.html">Inicio de sesión</a></li>
-            <li><a class="dropdown-item" href="#">Registro</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/inicio-sesion']" routerLinkActive="router-link-active" >Inicio de sesión</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/registro']" routerLinkActive="router-link-active" >Registro</a></li>
           </ul>
         </li>
       </ul>
     </div>
+    <a class="navbar-brand" href="#">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRUsU3v1CeQ_6XO0Nd1YkdomVJEmDxGVA2rg&usqp=CAU" alt="" width="60" height="30" class="d-inline-block align-text-top">
+      Carrito
+    </a>
   </div>
 </nav>
