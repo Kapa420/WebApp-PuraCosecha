@@ -9,6 +9,9 @@ import { BodyMainpageComponent } from './components/body-mainpage/body-mainpage.
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { AdministradoresMainpageComponent } from './components/administradores-mainpage/administradores-mainpage.component';
+import { TablaProductosAdminComponent } from './components/tabla-productos-admin/tabla-productos-admin.component';
+import { TablaClientesAdminComponent } from './components/tabla-clientes-admin/tabla-clientes-admin.component';
+import { TablaProductoresAdminComponent } from './components/tabla-productores-admin/tabla-productores-admin.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { AdministradoresMainpageComponent } from './components/administradores-m
     BodyMainpageComponent,
     InicioSesionComponent,
     RegistroComponent,
-    AdministradoresMainpageComponent
+    AdministradoresMainpageComponent,
+    TablaProductosAdminComponent,
+    TablaClientesAdminComponent,
+    TablaProductoresAdminComponent
   ],
   imports: [
     BrowserModule,
