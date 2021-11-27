@@ -3,7 +3,6 @@ import clienteRoutes from "./routes/cliente";
 import productoresRoutes from './routes/productores';
 import productoRoutes from './routes/producto';
 import facturaRoutes from './routes/factura'
-import detalleRoutes from './routes/detalle'
 import config from "./config/config";
 import errorHandler from './middlewares/erros';
 import isAdmin from './middlewares/admin';
@@ -13,11 +12,18 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
+app.use((_, res, next)=> {
+  res.header('Access-Control-Allow-Origin','*');
+  res.header('Access-Control-Allow-Headers','*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+});
+
 clienteRoutes(app)
 productoresRoutes(app)
 productoRoutes(app)
 facturaRoutes(app)
-detalleRoutes(app)
 
 app.use(errorHandler);
 

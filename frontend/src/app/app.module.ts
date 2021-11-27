@@ -12,7 +12,8 @@ import { AdministradoresMainpageComponent } from './components/administradores-m
 import { TablaProductosAdminComponent } from './components/tabla-productos-admin/tabla-productos-admin.component';
 import { TablaClientesAdminComponent } from './components/tabla-clientes-admin/tabla-clientes-admin.component';
 import { TablaProductoresAdminComponent } from './components/tabla-productores-admin/tabla-productores-admin.component';
-
+import { HttpClientModule } from '@angular/common/http'
+import { ClientesService } from './services/clientes-admin/clientes.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +29,10 @@ import { TablaProductoresAdminComponent } from './components/tabla-productores-a
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ClientesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
