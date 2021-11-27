@@ -20,9 +20,14 @@
             <option selected>Productor</option>
           </select>
         </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary" (click)="validarUsuario()">Ingresar</button>
-        </div>
       </form>
+      <div class="row justify-content-around" id="botones">
+        <div class="col-6">
+          <button type="submit" class="btn btn-primary" [routerLink]="['/sesionCliente']" routerLinkActive="router-link-active">Ingresar como Cliente</button>
+        </div>
+        <div class="col-6">
+          <button type="submit" class="btn btn-primary" [routerLink]="['/sesionProductor']" routerLinkActive="router-link-active" >Ingresar como Productor</button>
+        </div>
+      </div>
     </div>
   </div>

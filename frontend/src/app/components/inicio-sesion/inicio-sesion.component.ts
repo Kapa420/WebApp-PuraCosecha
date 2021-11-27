@@ -13,7 +13,7 @@ export class InicioSesionComponent implements OnInit {
   ngOnInit(): void {
   }
   validarUsuario(){
-    localStorage.setItem("nombre", "dana")
+    localStorage.setItem("nombre", "camila")
     this.router.navigate(["/sesionCliente"])
   }
 }

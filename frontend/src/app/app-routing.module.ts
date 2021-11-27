@@ -5,11 +5,13 @@ import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { SesionClientesComponent } from './components/sesion-clientes/sesion-clientes.component';
+import { SesionProductoresComponent } from './components/sesion-productores/sesion-productores.component';
 
 const routes: Routes = [
   {path: 'inicio-sesion', component: InicioSesionComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'sesionCliente', component: SesionClientesComponent},
+  {path: 'sesionProductor', component: SesionProductoresComponent},
   {path: '', component: BodyMainpageComponent},
   {path: '404', component: NotfoundComponent}
 ];
