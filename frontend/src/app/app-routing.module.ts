@@ -7,7 +7,7 @@ import { AdministradoresMainpageComponent } from './components/administradores-m
 const routes: Routes = [
   {path: 'inicio-sesion', component: InicioSesionComponent},
   {path: 'registro', component: RegistroComponent},
-  {path: 'admins-mainpage', component: AdministradoresMainpageComponent}
+  {path: 'admins', component: AdministradoresMainpageComponent}
 ];
 
 @NgModule({
