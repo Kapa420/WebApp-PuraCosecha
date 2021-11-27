@@ -3,6 +3,7 @@
       <div class="col-md-auto" id="columinicio">
         <h1 id="inicio">Inicio de sesión</h1>
       </div>
+      <img id="logo" src="../../../assets/login.png" width="300" height="300">
       <form class="row g-3">
         <div class="col-md-6">
           <label for="inputEmail4" class="form-label">Email</label>
@@ -20,7 +21,7 @@
           </select>
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Ingresar</button>
+          <button type="submit" class="btn btn-primary" (click)="validarUsuario()">Ingresar</button>
         </div>
       </form>
     </div>
