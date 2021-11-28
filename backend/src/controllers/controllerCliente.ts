@@ -22,11 +22,13 @@ const obtenerCliente = async(req, res, next) => {
 
 const obtenerClientes = async(req, res, next) => {
   await executeQuery(
-      `SELECT nombre,
+      `SELECT id_cliente,
+              nombre,
               apellido,
               direccion,
               telefono,
-              email
+              email,
+              password
         FROM cliente`).then(response => {
   const data = {
     message: `${response.length} datos encontrados`,

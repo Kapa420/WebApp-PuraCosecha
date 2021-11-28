@@ -1,14 +1,14 @@
 import { Router } from 'express';
-import {actualizarProducto, agregarProducto, eliminarProducto, obtenerProducto, obtenerProductos} from "../controllers/controllerProducto";
+import {actualizarProductoAdmins, agregarProductoAdmins, eliminarProducto, obtenerProductoAdmins, obtenerProductosAdmins} from "../controllers/controllerProducto";
 /*import isAdmin from "../middlewares/admin";*/
 
 const productoRoutes=(app)=>{
     const router=Router();
       app.use('/', router);
-      router.get('/obtenerProductos', /*isAdmin,*/ obtenerProductos);
-      router.get('/obtenerProducto/:id',obtenerProducto);
-      router.post('/agregarProducto',agregarProducto);
-      router.put('/actualizarProducto/:id',actualizarProducto);
+      router.get('/obtenerProductosAdmins', /*isAdmin,*/ obtenerProductosAdmins);
+      router.get('/obtenerProductoAdmins/:id',obtenerProductoAdmins);
+      router.post('/agregarProductoAdmins',agregarProductoAdmins);
+      router.put('/actualizarProductoAdmins/:id',actualizarProductoAdmins);
       router.delete('/eliminarProducto/:id',eliminarProducto);
 
 }

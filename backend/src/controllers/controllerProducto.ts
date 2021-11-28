@@ -1,9 +1,9 @@
 import executeQuery from "../services/mysql.service";
 
-const obtenerProducto = async(req, res, next) => {
+const obtenerProductoAdmins = async(req, res, next) => {
     const {id} = req.params;
     try{
-    const response = await executeQuery(`SELECT * FROM producto where idProducto = ${id}`);
+    const response = await executeQuery(`SELECT * FROM producto where id_producto = ${id}`);
     const data = {
       message: `${response.length} datos encontrados`,
       data: response.length > 0 ? response[0] : null
@@ -14,7 +14,7 @@ const obtenerProducto = async(req, res, next) => {
     }
 }
 
-const obtenerProductos = async(req, res, next) => {
+const obtenerProductosAdmins = async(req, res, next) => {
     await executeQuery('SELECT * FROM producto').then(response => {
         const data = {
             message: `${response.length} datos encontrados`,
@@ -26,12 +26,14 @@ const obtenerProductos = async(req, res, next) => {
     });
 }
 
-const actualizarProducto = async(req, res, next) => {
-  const {nombreProducto,precio } = req.body;
+const actualizarProductoAdmins = async(req, res, next) => {
+  const {nombre_producto, categoria_producto, precio, id_productor } = req.body;
   const {id} = req.params;
-  executeQuery(`UPDATE producto SET nombreProducto = '${nombreProducto}',
-                                   precio = '${precio}',
-                                    WHERE idProducto = '${id}'`)
+  executeQuery(`UPDATE producto SET nombre_producto = '${nombre_producto}',
+                                    categoria_producto = '${categoria_producto}'
+                                    precio = '${precio}',
+                                    id_productor = '${id_productor}'
+                                    WHERE id_producto = '${id}'`)
                                    .then((response) => {
   console.log(response);
   res.json({message: response.affectedRows > 0 ? 'updated' : `No existe registro con id: ${req.params.id}`});
@@ -41,12 +43,22 @@ const actualizarProducto = async(req, res, next) => {
 }
 
 
-const agregarProducto = async (req, res, next) => {
-  const {nombreProducto, precio} = req.body;
+const agregarProductoAdmins = async (req, res, next) => {
+  const {nombre_producto, categoria_producto, precio, id_productor} = req.body;
   try {
     const response = await executeQuery(`INSERT INTO producto
-      (nombreProducto, precio) VALUES
-      ('${nombreProducto}',${precio}')`);
+      (
+        nombre_producto,
+        categoria_producto,
+        precio,
+        id_productor
+      ) VALUES
+      (
+        '${nombre_producto}',
+        '${categoria_producto}',
+        '${precio}',
+        '${id_productor}'
+        `);
       res.status(201).json({
         message: 'created',
         id: response.insertId
@@ -67,7 +79,7 @@ const eliminarProducto = async (req, res, next) => {
 
 export {
   eliminarProducto,
-  agregarProducto,
-  actualizarProducto,
-  obtenerProductos,
-  obtenerProducto}
+  agregarProductoAdmins,
+  actualizarProductoAdmins,
+  obtenerProductosAdmins,
+  obtenerProductoAdmins}

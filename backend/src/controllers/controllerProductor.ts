@@ -2,17 +2,16 @@ import executeQuery from "../services/mysql.service"
 
 const obtenerProductores= async(req,res,next) => {
     await executeQuery(
-    `SELECT nombre,
+    `SELECT id_productor,
+            nombre,
+            apellido,
             poblacion,
-            municipio,
             direccion,
             telefono,
-            Email,
-            tipoProducto
-            nombreProducto
-            FROM productores
-            INNER JOIN producto
-            ON productores.idProducto = producto.idProducto`).then(response => {
+            email,
+            password
+            FROM productor
+            `).then(response => {
         const data = {
             message: `${response.length} datos encontrados`,
             data: response.length > 0 ? response : null
@@ -28,17 +27,15 @@ const obtenerProductor= async(req, res, next) => {
     try{
         const response = await executeQuery(
           `SELECT nombre,
+                  apellido,
                   poblacion,
-                  municipio,
                   direccion,
                   telefono,
-                  Email,
-                  tipoProducto
-                  nombreProducto
-          FROM productores
-          INNER JOIN producto
-          ON productores.idProducto = producto.idProducto
-          WHERE productores.idProductor = ${id}`);
+                  email,
+                  tipoProducto,
+                  password
+          FROM productor
+          WHERE productor.id_productor = ${id}`);
         const data = {
             message: `${response.length} datos encontrados`,
             data: response.length > 0 ? response[0] : null
@@ -51,16 +48,16 @@ const obtenerProductor= async(req, res, next) => {
 }
 
 const agregarProductor= async (req, res, next) => {
-    const {nombre, poblacion, municipio, direccion, telefono, Email, tipoProducto, idProducto} = req.body;
+    const {nombre, apellido, poblacion, direccion, telefono, email, password} = req.body;
     try{
-        const response = await executeQuery(`INSERT INTO productores
+        const response = await executeQuery(`INSERT INTO productor
           (
-            nombre, poblacion, municipio, direccion, telefono,
-            Email, tipoProducto, idProducto
+            nombre, apellido, poblacion, direccion,
+            telefono, email, password
           ) VALUES
           (
-            '${nombre}', '${poblacion}', '${municipio}', '${direccion}',
-            '${telefono}', '${Email}', '${tipoProducto}', '${idProducto}'
+            '${nombre}', '${apellido}', '${poblacion}', '${direccion}',
+            '${telefono}', '${email}', '${password}'
           )`);
         res.status(201).json({ message: 'created', id: response.insertId});
     }catch(error){
@@ -69,17 +66,16 @@ const agregarProductor= async (req, res, next) => {
 
 }
 const actualizarProductor=(req, res, next)  => {
-    const {nombre, poblacion, municipio, direccion, telefono,
-           Email, tipoProducto, idProducto} = req.body;
+    const {nombre, apellido, poblacion, direccion, telefono, email, password} = req.body;
     const {id} = req.params;
-    executeQuery(`UPDATE productores SET nombre = '${nombre}',
+    executeQuery(`UPDATE productor SET nombre = '${nombre}',
+                                         apellido = '${apellido}'
                                          poblacion = '${poblacion}',
-                                         municipio = '${municipio}',
                                          direccion = '${direccion},
                                          telefono = '${telefono},
-                                         Email = '${Email},
-                                         tipoProducto = '${tipoProducto},
-                                         WHERE idProductores = '${id}'`).then((response) =>{
+                                         email = '${email},
+                                         password = '${password}'
+                                         WHERE id_productor = '${id}'`).then((response) =>{
         console.log(response);
         res.json({message: response.affectedRows > 0 ? 'updated' : `No existe registro con id: ${req.params.id}`});
     }).catch((error) => {
@@ -88,7 +84,7 @@ const actualizarProductor=(req, res, next)  => {
 
 }
 const eliminarProductor=(req, res, next) => {
-    executeQuery(`DELETE FROM productores WHERE idProductor = '${req.params.id}'`).then((response) => {
+    executeQuery(`DELETE FROM productor WHERE id_productor = '${req.params.id}'`).then((response) => {
         res.json({message: response.affectedRows > 0 ? 'deleted' : `No existe registro con id: ${req.params.id}`});
     }).catch((error) => {
         next(error)
