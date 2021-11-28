@@ -20,5 +20,8 @@ export class ClientesService {
 
   public agregarCliente(cliente: any) {  }
 
-  public eliminarCliente(id: number) {  }
+  public eliminarCliente(id: number): Promise<any> {
+    const url = `${environment.apiUrl}/eliminarCliente/${id}`;
+    return this.http.delete(url).toPromise();
+  }
 }

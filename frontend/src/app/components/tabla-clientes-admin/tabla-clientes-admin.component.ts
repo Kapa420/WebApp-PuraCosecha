@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ClientesService } from 'src/app/services/clientes-admin/clientes.service'
 import { ClientesAdminsModel } from 'src/app/models/clientes-admin'
 
@@ -9,6 +9,8 @@ import { ClientesAdminsModel } from 'src/app/models/clientes-admin'
 })
 
 export class TablaClientesAdminComponent implements OnInit {
+
+  @Output() alertData= new EventEmitter();
 
   public clientes: ClientesAdminsModel[] = [];
 
@@ -27,4 +29,15 @@ export class TablaClientesAdminComponent implements OnInit {
       console.log(error);
     }
   }
+
+  public eliminarCliente(id: number){
+    this.clientesservice.eliminarCliente(id).then(async response =>{
+      if(response.message === 'deleted'){
+        this.alertData.emit('Cliente eliminado correctamente');
+        this.clientes = await this.obtenerClientes();
+      }
+    }).catch(error => {
+      console.log(error);
+    })
+    }
 }

@@ -23,6 +23,8 @@
         <td>{{cliente.telefono}}</td>
         <td>{{cliente.email}}</td>
         <td>{{cliente.password}}</td>
+        <td><button type="button" class="btn btn-danger" (click)="eliminarCliente(cliente.id_cliente)">Eliminar</button></td>
+        <td><button type="button" class="btn btn-info">Cambiar datos</button></td>
       </tr>
     </tbody>
   </table>
