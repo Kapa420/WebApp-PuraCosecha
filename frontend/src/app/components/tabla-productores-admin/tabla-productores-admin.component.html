@@ -1,1 +1,31 @@
-<p>tabla-productores-admin works!</p>
+<h2> Productores actualmente registrados en la pagina. </h2>
+
+<div class="tablaproductores">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Poblacion</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contraseña</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let productor of productores">
+        <th scope="row">{{productor.id_productor}}</th>
+        <td>{{productor.nombre}}</td>
+        <td>{{productor.apellido}}</td>
+        <td>{{productor.poblacion}}</td>
+        <td>{{productor.direccion}}</td>
+        <td>{{productor.telefono}}</td>
+        <td>{{productor.email}}</td>
+        <td>{{productor.password}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
