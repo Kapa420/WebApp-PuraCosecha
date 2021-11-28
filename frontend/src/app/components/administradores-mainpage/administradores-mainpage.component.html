@@ -1,14 +1,16 @@
 <h1 id="title"> Bienvenido Carlos </h1>
 
-<div class="d-flex align-items-start">
-  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-    <button class="nav-link active" id="v-pills-cliente-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cliente" type="button" role="tab" aria-controls="v-pills-cliente" aria-selected="true">Clientes</button>
-    <button class="nav-link" id="v-pills-productores-tab" data-bs-toggle="pill" data-bs-target="#v-pills-productores" type="button" role="tab" aria-controls="v-pills-productores" aria-selected="false">Productores</button>
-    <button class="nav-link" id="v-pills-productos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-productos" type="button" role="tab" aria-controls="v-pills-productos" aria-selected="false">Productos</button>
-  </div>
-  <div class="tab-content" id="v-pills-tabContent">
-    <div class="tab-pane fade show active" id="v-pills-cliente" role="tabpanel" aria-labelledby="v-pills-cliente-tab"><app-tabla-clientes-admin></app-tabla-clientes-admin></div>
-    <div class="tab-pane fade" id="v-pills-productores" role="tabpanel" aria-labelledby="v-pills-productores-tab"><app-tabla-productores-admin></app-tabla-productores-admin></div>
-    <div class="tab-pane fade" id="v-pills-productos" role="tabpanel" aria-labelledby="v-pills-productos-tab"><app-tabla-productos-admin></app-tabla-productos-admin></div>
+<div class="container">
+  <div class="d-flex bd-highlight">
+    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <button class="nav-link active" id="v-pills-cliente-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cliente" type="button" role="tab" aria-controls="v-pills-cliente" aria-selected="true">Clientes</button>
+      <button class="nav-link" id="v-pills-productores-tab" data-bs-toggle="pill" data-bs-target="#v-pills-productores" type="button" role="tab" aria-controls="v-pills-productores" aria-selected="false">Productores</button>
+      <button class="nav-link" id="v-pills-productos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-productos" type="button" role="tab" aria-controls="v-pills-productos" aria-selected="false">Productos</button>
+    </div>
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-cliente" role="tabpanel" aria-labelledby="v-pills-cliente-tab"><app-tabla-clientes-admin></app-tabla-clientes-admin></div>
+      <div class="tab-pane fade" id="v-pills-productores" role="tabpanel" aria-labelledby="v-pills-productores-tab"><app-tabla-productores-admin></app-tabla-productores-admin></div>
+      <div class="tab-pane fade" id="v-pills-productos" role="tabpanel" aria-labelledby="v-pills-productos-tab"><app-tabla-productos-admin></app-tabla-productos-admin></div>
+    </div>
   </div>
 </div>

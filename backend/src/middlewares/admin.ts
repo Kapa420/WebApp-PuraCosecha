@@ -1,4 +1,4 @@
-const isAdmin = (req, res, next) => {
+/*const isAdmin = (req, res, next) => {
     if(req.headers.isadmin){
         next();
     }else{
@@ -7,3 +7,4 @@ const isAdmin = (req, res, next) => {
 }
 
 export default isAdmin;
+*/

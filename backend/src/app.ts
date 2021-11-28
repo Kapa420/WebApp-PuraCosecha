@@ -5,7 +5,7 @@ import productoRoutes from './routes/producto';
 import facturaRoutes from './routes/factura'
 import config from "./config/config";
 import errorHandler from './middlewares/erros';
-import isAdmin from './middlewares/admin';
+/*import isAdmin from './middlewares/admin';*/
 
 const app = express();
 

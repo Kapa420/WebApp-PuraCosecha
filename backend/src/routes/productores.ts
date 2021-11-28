@@ -1,11 +1,11 @@
 import { Router } from "express"
 import { actualizarProductor, agregarProductor, eliminarProductor, obtenerProductor, obtenerProductores } from "../controllers/controllerProductor";
-import isAdmin from "../middlewares/admin";
+/*import isAdmin from "../middlewares/admin";*/
 
 const productoresRoutes=(app)=>{
     const router=Router();
       app.use('/', router);
-      router.get('/obtenerProductores', isAdmin, obtenerProductores);
+      router.get('/obtenerProductores', /*isAdmin,*/ obtenerProductores);
       router.get('/obtenerProductor/:id',obtenerProductor);
       router.post('/agregarProductor',agregarProductor);
       router.put('/actualizarProductor/:id',actualizarProductor);
