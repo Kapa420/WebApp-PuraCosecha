@@ -21,10 +21,10 @@ export class TablaClientesAdminComponent implements OnInit {
 
   private async obtenerClientes(): Promise<any>{
     try {
-    const response = await this.clientesservice.obtenerClientes();
-    return response.data;
-  }catch (error){
-    console.log(error);
+      const response = await this.clientesservice.obtenerClientes();
+      return response.data;
+    }catch (error){
+      console.log(error);
     }
   }
 }
