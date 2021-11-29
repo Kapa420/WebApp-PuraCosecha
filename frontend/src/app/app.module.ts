@@ -10,22 +10,33 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { SesionClientesComponent } from './components/sesion-clientes/sesion-clientes.component';
 import { SesionProductoresComponent } from './components/sesion-productores/sesion-productores.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { DatosClientesComponent } from './components/datos-clientes/datos-clientes.component';
+import { ActualizarDatosComponent } from './components/actualizar-datos/actualizar-datos.component';
+import { DatosProductoresComponent } from './components/datos-productores/datos-productores.component';
+import { ActDatosProductoresComponent } from './components/act-datos-productores/act-datos-productores.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ModalActualizadoComponent } from './components/modal-actualizado/modal-actualizado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-
     BodyMainpageComponent,
     InicioSesionComponent,
     RegistroComponent,
     SesionClientesComponent,
     SesionProductoresComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    DatosClientesComponent,
+    ActualizarDatosComponent,
+    DatosProductoresComponent,
+    ActDatosProductoresComponent,
+    ModalActualizadoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

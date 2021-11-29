@@ -4,29 +4,22 @@
         <h1 id="inicio">Inicio de sesión</h1>
       </div>
       <img id="logo" src="../../../assets/login.png" width="300" height="300">
-      <form class="row g-3">
+      <form class="row g-3" id="columnas" [formGroup]="formGroup">
         <div class="col-md-6">
           <label for="inputEmail4" class="form-label">Email</label>
-          <input type="email" class="form-control" id="inputEmail4">
+          <input type="email" class="form-control" id="inputEmail4" formControlName="email">
         </div>
         <div class="col-md-6">
           <label for="inputPassword4" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="inputPassword4">
-        </div>
-        <div class="col-md-4">
-          <label for="inputState" class="form-label">Tipo de usuario</label>
-          <select id="inputState" class="form-select">
-            <option selected>Cliente</option>
-            <option selected>Productor</option>
-          </select>
+          <input type="password" class="form-control" id="inputPassword4" formControlName="contrasena">
         </div>
       </form>
       <div class="row justify-content-around" id="botones">
         <div class="col-6">
-          <button type="submit" class="btn btn-primary" [routerLink]="['/sesionCliente']" routerLinkActive="router-link-active">Ingresar como Cliente</button>
+          <button type="submit" class="btn btn-primary" [routerLink]="['/sesionCliente']" routerLinkActive="router-link-active" (click)="inicioSesion()">Ingresar como Cliente</button>
         </div>
         <div class="col-6">
-          <button type="submit" class="btn btn-primary" [routerLink]="['/sesionProductor']" routerLinkActive="router-link-active" >Ingresar como Productor</button>
+          <button type="submit" class="btn btn-primary" [routerLink]="['/sesionProductor']" routerLinkActive="router-link-active" (click)="inicioSesion()">Ingresar como Productor</button>
         </div>
       </div>
     </div>

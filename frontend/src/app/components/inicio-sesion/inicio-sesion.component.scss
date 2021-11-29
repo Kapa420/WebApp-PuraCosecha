@@ -7,11 +7,19 @@
     background-color: rgb(22, 22, 22);
 }
 #logo{
+    position: relative;
+    top: 30px;
     width: 320px;
     height: 200px;
 }
+#columnas{
+    position: relative;
+    top: 40px;
+}
 
 #inicio{
+    position: relative;
+    top: 20px;
     align-content: flex-end;
     color: beige;
 }
@@ -23,5 +31,5 @@
 }
 #botones{
     position: relative;
-    top: 40px;
+    top: 90px;
 }
