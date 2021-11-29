@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BodyMainpageComponent } from './components/body-mainpage/body-mainpage.component';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { RegistroComponent } from './components/registro/registro.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

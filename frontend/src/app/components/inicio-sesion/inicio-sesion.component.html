@@ -14,13 +14,16 @@
         </div>
         <div class="col-md-4">
           <label for="inputState" class="form-label">Tipo de usuario</label>
-          <select id="inputState" class="form-select">
-            <option selected>Cliente</option>
-            <option selected>Productor</option>
-          </select>
+          <select name = "Tipo" id="inputState" class="form-select">
+          
+            <option value="1" selected>Cliente</option>
+            <option value="2" selected>Productor</option>
+          </select> 
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Ingresar</button>
+          <button type="submit" class="btn btn-primary" *ngIf= "1" >Ingresar</button>
+          <button type="submit" class="btn btn-primary" *ngIf="2" >Ingresar</button>
+          
         </div>
       </form>
     </div>
