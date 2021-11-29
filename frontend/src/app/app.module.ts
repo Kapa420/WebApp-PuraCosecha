@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -14,6 +13,8 @@ import { TablaClientesAdminComponent } from './components/tabla-clientes-admin/t
 import { TablaProductoresAdminComponent } from './components/tabla-productores-admin/tabla-productores-admin.component';
 import { HttpClientModule } from '@angular/common/http'
 import { ClientesService } from './services/clientes-admin/clientes.service';
+import { BotonModalAgregarClienteComponent } from './components/boton-modal-agregar-cliente/boton-modal-agregar-cliente.component';
+import { FormularioAgregarClienteComponent } from './components/formulario-agregar-cliente/formulario-agregar-cliente.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,9 @@ import { ClientesService } from './services/clientes-admin/clientes.service';
     AdministradoresMainpageComponent,
     TablaProductosAdminComponent,
     TablaClientesAdminComponent,
-    TablaProductoresAdminComponent
+    TablaProductoresAdminComponent,
+    BotonModalAgregarClienteComponent,
+    FormularioAgregarClienteComponent
   ],
   imports: [
     BrowserModule,
