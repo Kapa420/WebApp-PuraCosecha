@@ -10,7 +10,6 @@ import { AdministradoresMainpageComponent } from './components/administradores-m
 import { TablaProductosAdminComponent } from './components/tabla-productos-admin/tabla-productos-admin.component';
 import { TablaClientesAdminComponent } from './components/tabla-clientes-admin/tabla-clientes-admin.component';
 import { TablaProductoresAdminComponent } from './components/tabla-productores-admin/tabla-productores-admin.component';
-import { HttpClientModule } from '@angular/common/http'
 import { ClientesService } from './services/clientes-admin/clientes.service';
 import { BotonModalAgregarClienteComponent } from './components/boton-modal-agregar-cliente/boton-modal-agregar-cliente.component';
 import { FormularioAgregarClienteComponent } from './components/formulario-agregar-cliente/formulario-agregar-cliente.component';
