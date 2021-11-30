@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { BodyMainpageComponent } from './components/body-mainpage/body-mainpage.component';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './components/registro/registro.component';
@@ -19,11 +18,16 @@ import { BotonModalAgregarProductorComponent } from './components/boton-modal-ag
 import { BotonModalAgregarProductoComponent } from './components/boton-modal-agregar-producto/boton-modal-agregar-producto.component';
 import { FormularioAgregarProductoComponent } from './components/formulario-agregar-producto/formulario-agregar-producto.component';
 import { FormularioAgregarProductorComponent } from './components/formulario-agregar-productor/formulario-agregar-productor.component';
+import { SesionClientesComponent } from './components/sesion-clientes/sesion-clientes.component';
+import { SesionProductoresComponent } from './components/sesion-productores/sesion-productores.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { FooterComponent } from './components/footer/footer.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     BodyMainpageComponent,
     InicioSesionComponent,
     RegistroComponent,
@@ -36,7 +40,11 @@ import { FormularioAgregarProductorComponent } from './components/formulario-agr
     BotonModalAgregarProductorComponent,
     BotonModalAgregarProductoComponent,
     FormularioAgregarProductoComponent,
-    FormularioAgregarProductorComponent
+    FormularioAgregarProductorComponent,
+    SesionClientesComponent,
+    SesionProductoresComponent,
+    NotfoundComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
