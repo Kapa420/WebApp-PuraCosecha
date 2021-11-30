@@ -14,6 +14,10 @@ import { HttpClientModule } from '@angular/common/http'
 import { ClientesService } from './services/clientes-admin/clientes.service';
 import { BotonModalAgregarClienteComponent } from './components/boton-modal-agregar-cliente/boton-modal-agregar-cliente.component';
 import { FormularioAgregarClienteComponent } from './components/formulario-agregar-cliente/formulario-agregar-cliente.component';
+import { BotonModalAgregarProductorComponent } from './components/boton-modal-agregar-productor/boton-modal-agregar-productor.component';
+import { BotonModalAgregarProductoComponent } from './components/boton-modal-agregar-producto/boton-modal-agregar-producto.component';
+import { FormularioAgregarProductoComponent } from './components/formulario-agregar-producto/formulario-agregar-producto.component';
+import { FormularioAgregarProductorComponent } from './components/formulario-agregar-productor/formulario-agregar-productor.component';
 import { SesionClientesComponent } from './components/sesion-clientes/sesion-clientes.component';
 import { SesionProductoresComponent } from './components/sesion-productores/sesion-productores.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
@@ -39,6 +43,10 @@ import { FooterComponent } from './components/footer/footer.component';
     TablaProductoresAdminComponent,
     BotonModalAgregarClienteComponent,
     FormularioAgregarClienteComponent,
+    BotonModalAgregarProductorComponent,
+    BotonModalAgregarProductoComponent,
+    FormularioAgregarProductoComponent,
+    FormularioAgregarProductorComponent,
     SesionClientesComponent,
     SesionProductoresComponent,
     NotfoundComponent,
