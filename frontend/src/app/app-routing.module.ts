@@ -5,19 +5,21 @@ import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { AdministradoresMainpageComponent } from './components/administradores-mainpage/administradores-mainpage.component';
-import { BotonModalAgregarClienteComponent } from './components/boton-modal-agregar-cliente/boton-modal-agregar-cliente.component';
 import { SesionClientesComponent } from './components/sesion-clientes/sesion-clientes.component';
 import { SesionProductoresComponent } from './components/sesion-productores/sesion-productores.component';
+import { BotonModalAgregarProductorComponent } from './components/boton-modal-agregar-productor/boton-modal-agregar-productor.component';
+import { TablaClientesAdminComponent } from './components/tabla-clientes-admin/tabla-clientes-admin.component';
 
 const routes: Routes = [
   {path: 'inicio-sesion', component: InicioSesionComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'admins', component: AdministradoresMainpageComponent},
-  {path: 'shido', component: BotonModalAgregarClienteComponent},
   {path: 'sesionCliente', component: SesionClientesComponent},
   {path: 'sesionProductor', component: SesionProductoresComponent},
   {path: '', component: BodyMainpageComponent},
-  {path: '404', component: NotfoundComponent}
+  {path: '404', component: NotfoundComponent},
+  {path: 'shido', component: BotonModalAgregarProductorComponent},
+  {path: 'admins/cliente-admin', component: TablaClientesAdminComponent}
 ];
 
 @NgModule({
