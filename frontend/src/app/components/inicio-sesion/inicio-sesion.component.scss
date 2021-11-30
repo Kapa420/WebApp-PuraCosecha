@@ -1,8 +1,16 @@
 .container{
-    width: 700px;
-    height: 500px;
+    position: relative;
+    top: 20px;
+    left: 40px;
+    width: 500px;
+    height: 550px;
     background-color: rgb(22, 22, 22);
 }
+#logo{
+    width: 320px;
+    height: 200px;
+}
+
 #inicio{
     align-content: flex-end;
     color: beige;
@@ -13,6 +21,7 @@
 .form-label{
     color:beige;
 }
-#columna6{
-    color: blue;
+#botones{
+    position: relative;
+    top: 40px;
 }
