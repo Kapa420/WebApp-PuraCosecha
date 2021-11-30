@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-inicio-sesion',
-  templateUrl: './inicio-sesion.component.html',
-  styleUrls: ['./inicio-sesion.component.scss']
+  selector: 'app-act-datos-productores',
+  templateUrl: './act-datos-productores.component.html',
+  styleUrls: ['./act-datos-productores.component.scss']
 })
-export class InicioSesionComponent implements OnInit {
+export class ActDatosProductoresComponent implements OnInit {
   public formGroup: FormGroup = new FormGroup({});
-
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -18,11 +16,16 @@ export class InicioSesionComponent implements OnInit {
   }
   public buildForm(){
     this.formGroup = this.formBuilder.group({
+      nombre: ['', Validators.required],
+      apellido: ['', Validators.required],
+      poblacion: ['', Validators.required],
+      direccion: ['', Validators.required],
+      telefono: ['', Validators.required],
       email: ['', Validators.required],
       contrasena: ['', Validators.required],
     });
   }
-  public inicioSesion(){
+  public actualizarProductores(){
     console.log(this.formGroup.value)
   }
 }

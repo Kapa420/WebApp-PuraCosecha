@@ -1,0 +1,85 @@
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand">¡Bienvenido productor!</a>
+      <a class="navbar-brand"><strong>Actualizar datos</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Opciones</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/sesionProductor">Volver a tu perfil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cerrar sesión</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+<div id="fondo">
+<form [formGroup]="formGroup">
+  <table class="table table-dark" id="tabla">
+    <tbody>
+        <tr>
+            <td scope="col"><h6>Nombre:</h6></td>
+            <td scope="col">*Nombre del productor</td>
+            <td scope="col"><input type="text" class="form-control" placeholder="Nuevo nombre" formControlName="nombre"></td>
+        </tr>
+        <tr class="table-active">
+            <td><h6>Apellido:</h6></td>
+            <td>*Apellido del productor</td>
+            <td scope="col"><input type="text" class="form-control" placeholder="Nuevo apellido" formControlName="apellido"></td>
+        </tr>
+        <tr>
+            <td><h6>Población:</h6></td>
+            <td>*Población del productor</td>
+            <td scope="col"><input type="text" class="form-control" placeholder="Nueva población" formControlName="poblacion"></td>
+        </tr>
+        <tr class="table-active">
+            <td><h6>Dirección:</h6></td>
+            <td>*Dirección del productor</td>
+            <td scope="col"><input type="text" class="form-control" placeholder="Nueva dirección" formControlName="direccion"></td>
+        </tr>
+        <tr>
+            <td scope="col"><h6>Teléfono:</h6></td>
+            <td scope="col">*Teléfono del productor</td>
+            <td scope="col"><input type="text" class="form-control" placeholder="Nuevo teléfono" formControlName="telefono"></td>
+        </tr>
+        <tr class="table-active">
+            <td><h6>Email:</h6></td>
+            <td>*Email del cliente</td>
+            <td scope="col"><input type="text" class="form-control" placeholder="Nuevo email" formControlName="email"></td>
+        </tr>
+        <tr>
+            <td scope="col"><h6>Contraseña:</h6></td>
+            <td scope="col">*Contraseña del productor</td>
+            <td scope="col"><input type="text" class="form-control" placeholder="Nueva contraseña" formControlName="contrasena"></td>
+        </tr>
+    </tbody>
+  </table>
+</form>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="actualizarProductores()" id="boton">
+    Actualizar
+  </button>
+</div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Actualizado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Tu información ha sido actualizada
+        </div>
+      </div>
+    </div>
+  </div>
