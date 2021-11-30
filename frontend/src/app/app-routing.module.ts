@@ -21,17 +21,14 @@ const routes: Routes = [
   {path: 'sesionCliente', component: SesionClientesComponent},
   {path: 'sesionProductor', component: SesionProductoresComponent},
   {path: '', component: BodyMainpageComponent},
-<<<<<<< HEAD
+  {path: '404', component: NotfoundComponent},
+  {path: 'shido', component: BotonModalAgregarProductorComponent},
+  {path: 'admins/cliente-admin', component: TablaClientesAdminComponent},
   {path: 'datosClientes', component:DatosClientesComponent},
   {path: 'datosProductores', component:DatosProductoresComponent},
   {path: 'actualizarDatos', component:ActualizarDatosComponent},
   {path: 'actualizarDatosProductores', component:ActDatosProductoresComponent},
   {path: '404', component: NotfoundComponent}
-=======
-  {path: '404', component: NotfoundComponent},
-  {path: 'shido', component: BotonModalAgregarProductorComponent},
-  {path: 'admins/cliente-admin', component: TablaClientesAdminComponent}
->>>>>>> carlos
 ];
 
 @NgModule({
