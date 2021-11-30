@@ -17,6 +17,7 @@ import { FormularioAgregarClienteComponent } from './components/formulario-agreg
 import { SesionClientesComponent } from './components/sesion-clientes/sesion-clientes.component';
 import { SesionProductoresComponent } from './components/sesion-productores/sesion-productores.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     FormularioAgregarClienteComponent,
     SesionClientesComponent,
     SesionProductoresComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
