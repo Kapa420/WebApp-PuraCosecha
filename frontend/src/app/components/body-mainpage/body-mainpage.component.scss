@@ -1,21 +1,27 @@
+.background{
+    height: 596px;
+    background-image: url(../../../assets/fondo.png);
+    background-size: 1370px;
+    background-repeat:no-repeat;
+    background-position: center center;
+
+}
+h1{
+    position: relative;
+    top: 25px;
+    left: 2px;
+    text-align: center;
+    color: beige;
+}
+img{
+    position: relative;
+    top: 5px;
+}
 .contenedor{
     position: relative;
-    display: inline-block;
-    text-align: center;
-}
-.conteiner{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: beige;
-}
-.centrado{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-#imagen{
-    width: 1366px;
+    top: 450px;
+    left: 530px;
+    width: 430px;
+    height: 96px;
+    background-color: rgba(22, 0, 0, 0.8)
 }
