@@ -16,9 +16,15 @@ export class ClientesService {
 
   public obtenerCliente(id: number) { }
 
-  public actualizarCliente(cliente: any) {  }
+  public actualizarCliente(cliente: any) {
+    const url = `${environment.apiUrl}/actualizarCliente/${cliente.id_cliente}`
+    this.http.put(url, cliente).toPromise();
+  }
 
-  public agregarCliente(cliente: any) {  }
+  public agregarCliente(cliente: any) {
+    const url = `${environment.apiUrl}/agregarCliente`
+    return this.http.post(url, cliente).toPromise();
+   }
 
   public eliminarCliente(id: number): Promise<any> {
     const url = `${environment.apiUrl}/eliminarCliente/${id}`;

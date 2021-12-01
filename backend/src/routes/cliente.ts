@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import {actualizarCliente, agregarCliente,
         eliminarCliente, obtenerCliente,
-        obtenerClientes} from "../controllers/controllerCliente";
+        obtenerClientes, iniciarSesion} from "../controllers/controllerCliente";
 /*import isAdmin from "../middlewares/admin";*/
 
 const clienteRoutes=(app)=>{
@@ -12,6 +12,7 @@ const clienteRoutes=(app)=>{
       router.post('/agregarCliente',agregarCliente);
       router.put('/actualizarCliente/:id',actualizarCliente);
       router.delete('/eliminarCliente/:id',eliminarCliente);
+      router.get('/iniciarSesion/:email', iniciarSesion)
 
 }
 export default clienteRoutes

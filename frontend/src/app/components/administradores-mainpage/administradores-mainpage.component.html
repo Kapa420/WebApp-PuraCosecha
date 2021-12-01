@@ -1,14 +1,27 @@
-<h1 id="title"> Bienvenido Carlos </h1>
-
-<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-clientes-tab" data-bs-toggle="tab" data-bs-target="#nav-clientes" type="button" role="tab" aria-controls="nav-clientes" aria-selected="true">Clientes</button>
-    <button class="nav-link" id="nav-productores-tab" data-bs-toggle="tab" data-bs-target="#nav-productores" type="button" role="tab" aria-controls="nav-productores" aria-selected="false">Productores</button>
-    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Productos</button>
+<nav class="navbar navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand">¡Bienvenido admin!</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Opciones</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admins/cliente-admin">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admins/productores-admin">Productores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admins/productos-admin">Productos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </nav>
-<div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-clientes" role="tabpanel" aria-labelledby="nav-clientes-tab"><app-tabla-clientes-admin></app-tabla-clientes-admin></div>
-  <div class="tab-pane fade" id="nav-productores" role="tabpanel" aria-labelledby="nav-productores-tab"><app-tabla-productores-admin></app-tabla-productores-admin></div>
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><app-tabla-productos-admin></app-tabla-productos-admin></div>
-</div>

@@ -27,7 +27,7 @@ import { ActDatosProductoresComponent } from './components/act-datos-productores
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalActualizadoComponent } from './components/modal-actualizado/modal-actualizado.component';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -60,6 +60,8 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
 
   providers: [ClientesService],

@@ -97,4 +97,51 @@ const eliminarCliente = async (req, res, next) => {
     });
 }
 
-export {eliminarCliente, agregarCliente, actualizarCliente, obtenerCliente, obtenerClientes}
+const registrarCliente = async (req, res, next) => {
+    const {nombre, apellido, direccion, telefono, email, password} = req.body;
+    const existCliente = await executeQuery(`SELECT * FROM cliente WHERE email = '${email}'`);
+    if (existCliente.lenght > 0){
+      res.send("Ya existe el cliente");
+    }else{
+      const response = await executeQuery(`INSERT INTO cliente
+        (id_cliente, nombre, apellido, direccion, telefono,
+          email, password ) VALUES
+        (
+          NULL, '${nombre}', '${apellido}', '${direccion}', '${telefono}',
+          '${email}',   '${password}')`);
+          res.status(201).json({
+            message: 'Usuario Creado',
+            id: response.insertId})
+          }
+        }
+
+const iniciarSesion = async (req, res, next) => {
+  const {email} = req.params;
+  try{
+    const response = await executeQuery(`
+      SELECT id_cliente,
+             nombre,
+             apellido,
+             direccion,
+             telefono,
+             email,
+             password
+      FROM cliente WHERE email = ${email}`);
+      const data = {
+      message: `${response.length} datos encontrados`,
+      data: response.length > 0 ? response[0] : null
+        };
+        res.json(data);
+    }catch(error){
+      next(error);
+    }
+}
+export{
+  eliminarCliente,
+  agregarCliente,
+  actualizarCliente,
+  obtenerCliente,
+  obtenerClientes,
+  registrarCliente,
+  iniciarSesion
+}
