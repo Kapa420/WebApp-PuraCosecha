@@ -1,4 +1,5 @@
-<div class="container">
+<div class="backgrond">
+  <div class="container">
     <div class="row justify-content-md-center" >
       <div class="col-md-auto" id="columinicio">
         <h1 id="inicio">Inicio de sesión</h1>
@@ -16,7 +17,7 @@
       </form>
       <div class="row justify-content-around" id="botones">
         <div class="col-6">
-          <button type="submit" class="btn btn-primary" [routerLink]="['/sesionCliente']" routerLinkActive="router-link-active" (click)="inicioSesion()">Ingresar como Cliente</button>
+          <button type="submit" id="accederCliente" class="btn btn-primary" [routerLink]="['/sesionCliente']" routerLinkActive="router-link-active" (click)="inicioSesion()">Ingresar como Cliente</button>
         </div>
         <div class="col-6">
           <button type="submit" class="btn btn-primary" [routerLink]="['/sesionProductor']" routerLinkActive="router-link-active" (click)="inicioSesion()">Ingresar como Productor</button>
@@ -24,3 +25,4 @@
       </div>
     </div>
   </div>
+</div>

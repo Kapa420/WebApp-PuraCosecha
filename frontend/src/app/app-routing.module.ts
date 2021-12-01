@@ -7,6 +7,7 @@ import { DatosClientesComponent } from './components/datos-clientes/datos-client
 import { DatosProductoresComponent } from './components/datos-productores/datos-productores.component';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { RegistroProductoresComponent } from './components/registro-productores/registro-productores.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { SesionClientesComponent } from './components/sesion-clientes/sesion-clientes.component';
 import { SesionProductoresComponent } from './components/sesion-productores/sesion-productores.component';
@@ -14,6 +15,7 @@ import { SesionProductoresComponent } from './components/sesion-productores/sesi
 const routes: Routes = [
   {path: 'inicio-sesion', component: InicioSesionComponent},
   {path: 'registro', component: RegistroComponent},
+  {path: 'registroProductores', component: RegistroProductoresComponent},
   {path: 'sesionCliente', component: SesionClientesComponent},
   {path: 'sesionProductor', component: SesionProductoresComponent},
   {path: '', component: BodyMainpageComponent},
