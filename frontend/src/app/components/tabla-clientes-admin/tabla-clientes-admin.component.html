@@ -1,3 +1,5 @@
+<app-administradores-mainpage></app-administradores-mainpage>
+
 <h2> Clientes actualmente registrados en la pagina. </h2>
 
 <div class="container">
@@ -28,7 +30,7 @@
         <td>{{cliente.email}}</td>
         <td>{{cliente.password}}</td>
         <td><button type="button" class="btn btn-danger" (click)="eliminarCliente(cliente.id_cliente)">Eliminar</button></td>
-        <td><button type="button" class="btn btn-info">Cambiar datos</button></td>
+        <td><button type="button" class="btn btn-info">Editar</button></td>
       </tr>
     </tbody>
   </table>

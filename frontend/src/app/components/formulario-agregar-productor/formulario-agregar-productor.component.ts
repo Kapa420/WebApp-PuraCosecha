@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-formulario-agregar-productor',
@@ -6,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulario-agregar-productor.component.scss']
 })
 export class FormularioAgregarProductorComponent implements OnInit {
+
+  public formCliente: FormGroup = new FormGroup({});
+  
 
   constructor() { }
 

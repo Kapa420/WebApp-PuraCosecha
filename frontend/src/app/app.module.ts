@@ -22,6 +22,7 @@ import { SesionClientesComponent } from './components/sesion-clientes/sesion-cli
 import { SesionProductoresComponent } from './components/sesion-productores/sesion-productores.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [ClientesService],
   bootstrap: [AppComponent]
