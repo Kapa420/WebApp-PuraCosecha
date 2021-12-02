@@ -13,6 +13,14 @@ export class ProductoresService {
     const url = `${environment.apiUrl}/obtenerProductores`
     return this.http.get(url).toPromise();
   }
+  public agregarProductor(productor: any) {
+    const url = `${environment.apiUrl}/agregarProductor`
+    return this.http.post(url, productor).toPromise();
+   }
 
-  
+   public eliminarProductor(id: number): Promise<any> {
+     const url = `${environment.apiUrl}/eliminarProductor/${id}`;
+     return this.http.delete(url).toPromise();
+   }
+
 }

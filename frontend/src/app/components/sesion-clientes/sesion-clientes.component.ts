@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from 'src/app/services/usuario.service';
+/*import { UsuarioService } from 'src/app/services/usuario.service';*/
 
 @Component({
   selector: 'app-sesion-clientes',
@@ -11,7 +11,7 @@ public nombre: String | null="María"
   constructor() { }
 
   ngOnInit(): void {
-    this.nombre=localStorage.getItem("nombre")
+  /*  this.nombre=localStorage.getItem("nombre")*/
   }
 
 }

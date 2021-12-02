@@ -45,7 +45,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SesionClientesComponent,
     SesionProductoresComponent,
     NotfoundComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,8 +2,8 @@
 
 <h2> Clientes actualmente registrados en la pagina. </h2>
 
-<div class="container">
-  <app-boton-modal-agregar-cliente></app-boton-modal-agregar-cliente>
+<div id="container">
+  <app-boton-modal-agregar-cliente *ngIf="showModal"></app-boton-modal-agregar-cliente>
 </div>
 
 <div class="tablaclientes">
@@ -30,7 +30,7 @@
         <td>{{cliente.email}}</td>
         <td>{{cliente.password}}</td>
         <td><button type="button" class="btn btn-danger" (click)="eliminarCliente(cliente.id_cliente)">Eliminar</button></td>
-        <td><button type="button" class="btn btn-info">Editar</button></td>
+        <td><button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="irActualizarCliente(cliente)">Editar</button></td>
       </tr>
     </tbody>
   </table>

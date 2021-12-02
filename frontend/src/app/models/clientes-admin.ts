@@ -5,5 +5,5 @@ export interface ClientesAdminsModel{
   direccion: string;
   telefono: string;
   email: string;
-  password: string
+  password: string;
 }
