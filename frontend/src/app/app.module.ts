@@ -7,9 +7,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BodyMainpageComponent } from './components/body-mainpage/body-mainpage.component';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
-import { RegistroComponent } from './components/registro/registro.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistroProductoresComponent } from './components/registro-productores/registro-productores.component';
+import { RegistroClienteComponent } from './components/registro-cliente/registro-cliente.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     BodyMainpageComponent,
     InicioSesionComponent,
-    RegistroComponent
+    RegistroProductoresComponent,
+    RegistroClienteComponent
+  
   ],
   imports: [
     BrowserModule,
