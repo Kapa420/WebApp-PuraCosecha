@@ -1,0 +1,26 @@
+.tablaclientes
+{
+  display: flex;
+  position: relative;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+}
+h2
+{
+ margin-bottom: 30px;
+ margin-top: 30px;
+ text-align: center;
+}
+.container{
+  margin-bottom: 50px;
+  margin-top: 50px;
+  position: relative;
+}
+.background{
+  height: 596px;
+  background-image: url(../../../assets/vaca.png);
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+}

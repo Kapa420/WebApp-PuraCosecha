@@ -25,9 +25,9 @@ import { ActualizarDatosComponent } from './components/actualizar-datos/actualiz
 import { DatosProductoresComponent } from './components/datos-productores/datos-productores.component';
 import { ActDatosProductoresComponent } from './components/act-datos-productores/act-datos-productores.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ModalActualizadoComponent } from './components/modal-actualizado/modal-actualizado.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistroProductoresComponent } from './components/registro-productores/registro-productores.component';
 
 @NgModule({
   declarations: [
@@ -53,8 +53,9 @@ import { HttpClientModule } from '@angular/common/http';
     ActualizarDatosComponent,
     DatosProductoresComponent,
     ActDatosProductoresComponent,
-    ModalActualizadoComponent,
-    FooterComponent
+    FooterComponent,
+    RegistroProductoresComponent,
+  
   ],
   imports: [
     BrowserModule,

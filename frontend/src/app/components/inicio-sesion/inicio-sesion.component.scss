@@ -6,11 +6,23 @@
     height: 550px;
     background-color: rgb(22, 22, 22);
 }
+.backgrond{
+    height: 596px;
+    background-image: url(../../../assets/anzuelo.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+
+}
 #logo{
     position: relative;
     top: 30px;
     width: 320px;
     height: 200px;
+}
+#accederCliente{
+    position: relative;
+    left: 20px;
 }
 #columnas{
     position: relative;
