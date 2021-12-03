@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BodyMainpageComponent } from './components/body-mainpage/body-mainpage.component';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
-import { RegistroComponent } from './components/registro/registro.component';
 import { AdministradoresMainpageComponent } from './components/administradores-mainpage/administradores-mainpage.component';
 import { TablaProductosAdminComponent } from './components/tabla-productos-admin/tabla-productos-admin.component';
 import { TablaClientesAdminComponent } from './components/tabla-clientes-admin/tabla-clientes-admin.component';
@@ -24,10 +23,12 @@ import { DatosClientesComponent } from './components/datos-clientes/datos-client
 import { ActualizarDatosComponent } from './components/actualizar-datos/actualizar-datos.component';
 import { DatosProductoresComponent } from './components/datos-productores/datos-productores.component';
 import { ActDatosProductoresComponent } from './components/act-datos-productores/act-datos-productores.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroProductoresComponent } from './components/registro-productores/registro-productores.component';
+import { RegistroClienteComponent } from './components/registro-cliente/registro-cliente.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +36,6 @@ import { RegistroProductoresComponent } from './components/registro-productores/
     HeaderComponent,
     BodyMainpageComponent,
     InicioSesionComponent,
-    RegistroComponent,
     AdministradoresMainpageComponent,
     TablaProductosAdminComponent,
     TablaClientesAdminComponent,
@@ -43,8 +43,6 @@ import { RegistroProductoresComponent } from './components/registro-productores/
     BotonModalAgregarClienteComponent,
     FormularioAgregarClienteComponent,
     BotonModalAgregarProductorComponent,
-    BotonModalAgregarProductoComponent,
-    FormularioAgregarProductoComponent,
     FormularioAgregarProductorComponent,
     SesionClientesComponent,
     SesionProductoresComponent,
@@ -55,6 +53,7 @@ import { RegistroProductoresComponent } from './components/registro-productores/
     ActDatosProductoresComponent,
     FooterComponent,
     RegistroProductoresComponent,
+    RegistroClienteComponent
   
   ],
   imports: [

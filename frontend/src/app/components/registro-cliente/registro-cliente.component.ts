@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-registro-productores',
-  templateUrl: './registro-productores.component.html',
-  styleUrls: ['./registro-productores.component.scss']
+  selector: 'app-registro-cliente',
+  templateUrl: './registro-cliente.component.html',
+  styleUrls: ['./registro-cliente.component.scss']
 })
-export class RegistroProductoresComponent implements OnInit {
+export class RegistroClienteComponent implements OnInit {
   public formGroup: FormGroup = new FormGroup({});
 
   constructor(private formBuilder: FormBuilder
@@ -18,17 +18,14 @@ export class RegistroProductoresComponent implements OnInit {
   public buildForm() {
     this.formGroup = this.formBuilder.group({
       nombre: ["", Validators.required],
+      apellido: ["", Validators.required],
       email: ["", Validators.required],
-      telefono: ["", Validators.required],
       contrasena: ["", Validators.required],
-      poblacion: ["", Validators.required],
-      ciudad: ["", Validators.required],
+      telefono: ["", Validators.required],
       direccion: ["", Validators.required],
-
     });
   }
   public registrar() {
     console.log(this.formGroup.value)
   }
 }
-
