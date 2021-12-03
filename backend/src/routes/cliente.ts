@@ -13,7 +13,7 @@ const clienteRoutes=(app)=>{
       router.post('/agregarCliente',agregarCliente);
       router.put('/actualizarCliente/:id',actualizarCliente);
       router.delete('/eliminarCliente/:id',eliminarCliente);
-      router.get('/iniciarSesion/:email', iniciarSesion)
+      router.post('/iniciarSesionCliente', iniciarSesion);
 
 }
 export default clienteRoutes

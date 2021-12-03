@@ -1,5 +1,6 @@
 import { Router } from "express"
-import { actualizarProductor, agregarProductor, eliminarProductor, obtenerProductor, obtenerProductores } from "../controllers/controllerProductor";
+import { actualizarProductor, agregarProductor, eliminarProductor,
+         obtenerProductor, obtenerProductores, iniciarSesion } from "../controllers/controllerProductor";
 /*import isAdmin from "../middlewares/admin";*/
 
 const productoresRoutes=(app)=>{
@@ -10,6 +11,7 @@ const productoresRoutes=(app)=>{
       router.post('/agregarProductor',agregarProductor);
       router.put('/actualizarProductor/:id',actualizarProductor);
       router.delete('/eliminarProductor/:id',eliminarProductor);
+      router.post('/iniciarSesionProductor', iniciarSesion);
 
 }
 // uso export para que pueda exportar y luego en .appts se pueda importar
