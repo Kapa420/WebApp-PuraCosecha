@@ -12,13 +12,15 @@ export class TablaClientesAdminComponent implements OnInit {
 
   @Output() alertData= new EventEmitter();
 
+
   public clientes: ClientesAdminsModel[] = [];
+
 
   constructor(private clientesservice: ClientesService) { }
 
   async ngOnInit(): Promise<void> {
     this.clientes = await this.obtenerClientes();
-    console.log(this.clientes);
+
   }
 
   private async obtenerClientes(): Promise<any>{
@@ -40,4 +42,8 @@ export class TablaClientesAdminComponent implements OnInit {
       console.log(error);
     })
     }
+
+  public irActualizarCliente(cliente: ClientesAdminsModel){
+    localStorage.setItem('clienteActualizar', JSON.stringify(cliente));
+  }
 }

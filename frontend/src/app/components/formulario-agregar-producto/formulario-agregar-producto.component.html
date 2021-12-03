@@ -1,1 +1,25 @@
-<p>formulario-agregar-producto works!</p>
+<form [formGroup]="formGroup">
+  <div class="col-md-12">
+    <label for="inputNombreProducto" class="form-label">Nombre del producto</label>
+    <input type="text" class="form-control" id="inputNombreProducto" placeholder="Queso filadelfia" formControlName="nombre_producto">
+  </div>
+  <div class="col-12">
+    <label for="inputCategoriaProducto" class="form-label">Categoria del producto</label>
+    <input type="text" class="form-control" id="inputCategoriaProducto" placeholder="Quesos" formControlName="categoria_producto">
+  </div>
+  <div class="separador1">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label for="inputPrecioProducto" class="form-label">Precio del producto</label>
+        <input type="text" class="form-control" id="inputPrecioProducto" placeholder="2000" formControlName="precio">
+      </div>
+      <div class="col-md-6">
+        <label for="inputIdProductor" class="form-label">Id del productor</label>
+        <input type="text" class="form-control" id="inputIdProductor" placeholder="1" formControlName="id_productor">
+      </div>
+    </div>
+  </div>
+  <div class="botonGuardar">
+    <button type="submit" class="btn btn-outline-success" [disabled]="formGroup.invalid" (click)="agregarProducto()">Crear producto</button>
+  </div>
+</form>

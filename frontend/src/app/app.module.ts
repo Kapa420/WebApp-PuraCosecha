@@ -55,7 +55,7 @@ import { RegistroProductoresComponent } from './components/registro-productores/
     ActDatosProductoresComponent,
     FooterComponent,
     RegistroProductoresComponent,
-  
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

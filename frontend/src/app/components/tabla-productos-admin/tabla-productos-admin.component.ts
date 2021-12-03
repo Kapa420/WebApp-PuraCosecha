@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 import { ProductosService } from 'src/app/services/productos-admin/productos.service'
 import { ProductoAdminsModel } from 'src/app/models/productos-admins'
 
@@ -8,6 +8,8 @@ import { ProductoAdminsModel } from 'src/app/models/productos-admins'
   styleUrls: ['./tabla-productos-admin.component.scss']
 })
 export class TablaProductosAdminComponent implements OnInit {
+
+  @Output() alertData= new EventEmitter();
 
   public productos: ProductoAdminsModel[] = [];
 
@@ -27,5 +29,14 @@ export class TablaProductosAdminComponent implements OnInit {
       console.log(error);
     }
   }
-
+  public eliminarProducto(id: number){
+    this.productosservice.eliminarProductosAdmins(id).then(async response =>{
+      if(response.message === 'deleted'){
+        this.alertData.emit('Producto eliminado correctamente');
+        this.productos = await this.ObtenerProductos();
+      }
+    }).catch(error => {
+      console.log(error);
+    })
+    }
 }
