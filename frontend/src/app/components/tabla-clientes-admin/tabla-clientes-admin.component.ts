@@ -12,7 +12,6 @@ export class TablaClientesAdminComponent implements OnInit {
 
   @Output() alertData= new EventEmitter();
 
-  public showModal = false;
 
   public clientes: ClientesAdminsModel[] = [];
 
@@ -21,6 +20,7 @@ export class TablaClientesAdminComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.clientes = await this.obtenerClientes();
+
   }
 
   private async obtenerClientes(): Promise<any>{
@@ -45,6 +45,5 @@ export class TablaClientesAdminComponent implements OnInit {
 
   public irActualizarCliente(cliente: ClientesAdminsModel){
     localStorage.setItem('clienteActualizar', JSON.stringify(cliente));
-    this.showModal = true;
   }
 }

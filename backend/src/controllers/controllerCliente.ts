@@ -1,15 +1,25 @@
 import executeQuery from "../services/mysql.service";
 
-const obtenerCliente = async(req, res, next) => {
+const obtenerClienteId = async(req, res, next) => {
   const {id} = req.params;
   try{
     const response = await executeQuery(`
-      SELECT nombre,
-             apellido,
-             direccion,
-             telefono,
-             email
-      FROM cliente WHERE id_cliente = ${id}`);
+      SELECT * FROM cliente WHERE id_cliente = ${id}`);
+      const data = {
+      message: `${response.length} datos encontrados`,
+      data: response.length > 0 ? response[0] : null
+        };
+        res.json(data);
+    }catch(error){
+      next(error);
+    }
+}
+
+const obtenerClienteEmail = async(req, res, next) => {
+  const {email} = req.params;
+  try{
+    const response = await executeQuery(`
+    SELECT * FROM cliente WHERE email = "${email}"`);
       const data = {
       message: `${response.length} datos encontrados`,
       data: response.length > 0 ? response[0] : null
@@ -140,7 +150,8 @@ export{
   eliminarCliente,
   agregarCliente,
   actualizarCliente,
-  obtenerCliente,
+  obtenerClienteId,
+  obtenerClienteEmail,
   obtenerClientes,
   registrarCliente,
   iniciarSesion

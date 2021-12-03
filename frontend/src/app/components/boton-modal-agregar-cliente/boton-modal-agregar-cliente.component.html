@@ -14,7 +14,40 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <app-formulario-agregar-cliente></app-formulario-agregar-cliente>
+        <form [formGroup] = "formGroup">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="inputNombreClienteAdmin" class="form-label"> Nombre </label>
+              <input type="text" class="form-control" id="noombreClienteAdmin" placeholder="Nombre" aria-label="Nombre" formControlName='nombre'>
+            </div>
+            <div class="col-md-6">
+              <label for="inputApellidoClienteAdmin" class="form-label"> Apellido </label>
+              <input type="text" class="form-control" id="apellidoClienteAdmin" placeholder="Apellido" aria-label="Apellido" formControlName='apellido'>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="inputEmailClienteAdmin" class="form-label">Email</label>
+            <input type="email" class="form-control" id="emailClienteAdmin" placeholder="usuario@email.com" formControlName='email'>
+          </div>
+          <div class="row g-3">
+            <div class="col-6">
+            <label for="inputDireccionClienteAdmin" class="form-label">Direccion</label>
+            <input type="text" class="form-control" id="inputDireccionClienteAdmin" placeholder="P. Sherman Calle Wallaby 42" formControlName='direccion'>
+          </div>
+            <div class="col-6">
+              <label for="inputTelefonoClienteAdmin" class="form-label">Telefono</label>
+              <input type="text" class="form-control" id="inputTelefonoClienteAdmin" placeholder="1233456" formControlName='telefono'>
+            </div>
+          </div>
+            <div class="col-6">
+              <label for="passwordClienteAdmin" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="passwordClienteAdmin" formControlName='password'>
+            </div>
+          <div class="botonGuardar">
+            <button type="submit" class="btn btn-outline-success" [disabled]="formGroup.invalid" (click)="agregarCliente()" *ngIf="!clienteActualizar">Crear cliente</button>
+            <button type="submit" class="btn btn-outline-success" [disabled]="formGroup.invalid" (click)="actualizarCliente()" *ngIf="clienteActualizar">Actualizar cliente</button>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
