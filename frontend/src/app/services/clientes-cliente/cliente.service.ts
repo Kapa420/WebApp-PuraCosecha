@@ -35,4 +35,9 @@ export class ClienteService {
     const url = `${environment.apiUrl}/obtenerClienteEmail/${email}`;
     return this.http.get(url).toPromise();
   }
+
+  public agregarCliente(cliente: any) {
+    const url = `${environment.apiUrl}/agregarCliente`
+    return this.http.post(url, cliente).toPromise();
+   }
 }

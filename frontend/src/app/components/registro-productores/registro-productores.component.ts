@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProductoresProductorService } from 'src/app/services/productores-productor/productores-productor.service'
 
 @Component({
   selector: 'app-registro-productores',
@@ -9,8 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegistroProductoresComponent implements OnInit {
   public formGroup: FormGroup = new FormGroup({});
 
-  constructor(private formBuilder: FormBuilder
-  ) { }
+  constructor(private formBuilder: FormBuilder,
+              private router: Router,
+              private productorservice: ProductoresProductorService) { }
 
   ngOnInit(): void {
     this.buildForm();
@@ -18,17 +21,22 @@ export class RegistroProductoresComponent implements OnInit {
   public buildForm() {
     this.formGroup = this.formBuilder.group({
       nombre: ["", Validators.required],
-      email: ["", Validators.required],
+      apellido: ["", Validators.required],
       telefono: ["", Validators.required],
-      contrasena: ["", Validators.required],
-      poblacion: ["", Validators.required],
-      ciudad: ["", Validators.required],
+      email: ["", Validators.required],
       direccion: ["", Validators.required],
+      poblacion: ["", Validators.required],
+      password: ["", Validators.required],
 
     });
   }
-  public registrar() {
-    console.log(this.formGroup.value)
+  public CrearProductor() {
+    console.log(this.formGroup.value);
+    this.productorservice.agregarProductor(this.formGroup.value).then(response =>{
+      alert("Productor agregado correctamente");
+      this.router.navigate(['/inicio-sesion']);
+    }).catch(error =>{
+      this.router.navigate(['/404']);
+    })
   }
 }
-

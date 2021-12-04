@@ -16,7 +16,6 @@ export class SesionClientesComponent implements OnInit {
 
   ngOnInit(): void {
     this.crearCliente();
-
   }
 
   public crearCliente(){

@@ -35,4 +35,8 @@ export class ProductoresProductorService {
     const url = `${environment.apiUrl}/obtenerProductoresEmail/${email}`;
     return this.http.get(url).toPromise();
   }
+  public agregarProductor(productor: any) {
+    const url = `${environment.apiUrl}/agregarProductor`
+    return this.http.post(url, productor).toPromise();
+   }
 }
