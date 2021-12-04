@@ -1,28 +1,35 @@
+.backgrond{
+    background-image: url("https://www.1zoom.me/big2/51/222957-Sepik.jpg");
+    height: 650px;
+    width: 1350px;
+}
 .container{
     position: relative;
     top: 20px;
     left: 40px;
-    width: 500px;
-    height: 550px;
+    width: 590px;
+    height: 540px;
     background-color: rgb(22, 22, 22);
 }
-.backgrond{
-    height: 596px;
-    background-image: url(../../../assets/anzuelo.jpg);
-    background-size: cover;
-    background-repeat:no-repeat;
-    background-position: center center;
-
+.titulo{
+    color: white;
+    text-align: center;
 }
+.imagen{
+    
+    height: 150px;
+    margin:auto;
+    display:block;
+}
+.boton{
+    text-align: center;
+}
+
 #logo{
     position: relative;
     top: 30px;
     width: 320px;
     height: 200px;
-}
-#accederCliente{
-    position: relative;
-    left: 20px;
 }
 #columnas{
     position: relative;
@@ -45,3 +52,5 @@
     position: relative;
     top: 90px;
 }
+   
+    

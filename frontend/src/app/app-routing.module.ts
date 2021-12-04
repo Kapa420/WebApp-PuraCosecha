@@ -7,8 +7,6 @@ import { DatosClientesComponent } from './components/datos-clientes/datos-client
 import { DatosProductoresComponent } from './components/datos-productores/datos-productores.component';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
-import { RegistroProductoresComponent } from './components/registro-productores/registro-productores.component';
-import { RegistroComponent } from './components/registro/registro.component';
 import { AdministradoresMainpageComponent } from './components/administradores-mainpage/administradores-mainpage.component';
 import { SesionClientesComponent } from './components/sesion-clientes/sesion-clientes.component';
 import { SesionProductoresComponent } from './components/sesion-productores/sesion-productores.component';
@@ -16,17 +14,17 @@ import { BotonModalAgregarProductorComponent } from './components/boton-modal-ag
 import { TablaClientesAdminComponent } from './components/tabla-clientes-admin/tabla-clientes-admin.component';
 import { TablaProductoresAdminComponent } from './components/tabla-productores-admin/tabla-productores-admin.component';
 import { TablaProductosAdminComponent } from './components/tabla-productos-admin/tabla-productos-admin.component';
+import { RegistroClienteComponent } from './components/registro-cliente/registro-cliente.component';
+import { RegistroProductoresComponent } from './components/registro-productores/registro-productores.component';
 
 const routes: Routes = [
   {path: 'inicio-sesion', component: InicioSesionComponent},
-  {path: 'registro', component: RegistroComponent},
   {path: 'admins', component: AdministradoresMainpageComponent},
   {path: 'registroProductores', component: RegistroProductoresComponent},
   {path: 'sesionCliente', component: SesionClientesComponent},
   {path: 'sesionProductor', component: SesionProductoresComponent},
   {path: '', component: BodyMainpageComponent},
   {path: '404', component: NotfoundComponent},
-  {path: 'shido', component: BotonModalAgregarProductorComponent},
   {path: 'admins/cliente-admin', component: TablaClientesAdminComponent},
   {path: 'datosClientes', component:DatosClientesComponent},
   {path: 'datosProductores', component:DatosProductoresComponent},
@@ -34,8 +32,11 @@ const routes: Routes = [
   {path: 'actualizarDatosProductores', component:ActDatosProductoresComponent},
   {path: '404', component: NotfoundComponent},
   {path: 'admins/productos-admin', component: TablaProductosAdminComponent},
-  {path: 'admins/productores-admin', component: TablaProductoresAdminComponent}
-];
+  {path: 'admins/productores-admin', component: TablaProductoresAdminComponent},
+  {path: 'registro', component: RegistroClienteComponent},
+  {path: 'registro-productores', component: RegistroProductoresComponent}
+]
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
