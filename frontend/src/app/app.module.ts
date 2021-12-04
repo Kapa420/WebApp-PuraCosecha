@@ -54,6 +54,8 @@ import { RegistroClienteComponent } from './components/registro-cliente/registro
     ActDatosProductoresComponent,
     FooterComponent,
     RegistroProductoresComponent,
+    FooterComponent,
+    RegistroClienteComponent,
     RegistroClienteComponent,
     BotonModalAgregarProductoComponent,
     FormularioAgregarProductoComponent

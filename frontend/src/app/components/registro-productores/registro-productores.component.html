@@ -1,45 +1,47 @@
 <div class="backgrond">
-<div class="container">
+  <div class="container">
     <div class="registro">
-        <h1 class="titulo">Registro de productor<span class="badge bg-secondary"></span> </h1>
-        <img src="../../../assets/login_adobespark.png" alt="" class="imagen">
+      <h1 class="titulo">Registro de productor<span class="badge bg-secondary"></span> </h1>
+      <img src="../../../assets/login_adobespark.png" alt="" class="imagen">
 
-        <form class="row g-3" [formGroup]="formGroup">
-            <div class="col-md-6">
-                <label for="inputNombre"class="form-label">Nombre</label>
-                <input type="Nombre" class="form-control" id="inputNombre" placeholder="Nombre">
-            </div>
+      <form [formGroup]="formGroup">
+        <div class="row g-3">
+        <div class="col-md-6">
+          <label for="inputNombre" class="form-label">Nombre</label>
+          <input type="Nombre" class="form-control" id="inputNombre" placeholder="Juan" formControlName='nombre'>
+        </div>
+        <div class="col-md-6">
+          <label for="inputNombre"class="form-label">Apellido</label>
+          <input type="Nombre" class="form-control" id="inputApellido" placeholder="Perez" formControlName='apellido'>
+        </div>
+      </div>
+      <div class="form md-12">
+        <label for="inputDireccion"class="form-label">Dirección</label>
+        <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección" formControlName='direccion'>
+      </div>
+      <div class="row g-3">
+        <div class="form-group col-md-6">
+          <label for="inputPoblacion"class="form-label">Poblacion</label>
+          <input type="poblacion" class="form-control" id="inputPoblacion" placeholder="Población" formControlName='poblacion'>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputTelefono"class="form-label" >Teléfono</label>
+          <input type="telefono" class="form-control" id="inputTelefono" placeholder="Teléfono" formControlName='telefono'>
+        </div>
+      </div>
+        <div class="col-md-12">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail" placeholder="Email" formControlName='email'>
+        </div>
+        <div class="col-md-12">
+          <label for="inputPassword" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="inputPassword" formControlName="password">
+        </div>
 
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputTelefono"class="form-label" >Teléfono</label>
-                <input type="telefono" class="form-control" id="inputTelefono" placeholder="Teléfono">
-            </div>
-            <div class="col-md-6">
-                <label for="inputPassword" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="inputPassword" formControlName="contrasena">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputPoblacion"class="form-label">Poblacion</label>
-                <input type="poblacion" class="form-control" id="inputPoblacion" placeholder="Población">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputCity"class="form-label">Ciudad</label>
-                <input type="text" class="form-control" id="inputCiudad" placeholder="Cuidad">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputDireccion"class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección">
-            </div>
-            <div class="col-12 boton">
-                <button type="submit" class="btn btn-primary">Completar Registro</button>
-            </div>
-        </form>
+        <div class="col-12 boton">
+          <button type="submit" class="btn btn-primary" (click)="CrearProductor()">Completar Registro</button>
+        </div>
+      </form>
     </div>
-</div>
+  </div>
 </div>

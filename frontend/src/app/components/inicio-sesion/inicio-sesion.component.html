@@ -12,15 +12,15 @@
         </div>
         <div class="col-md-6">
           <label for="inputPassword4" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="inputPassword4" formControlName="contrasena">
+          <input type="password" class="form-control" id="inputPassword4" formControlName="password">
         </div>
       </form>
       <div class="row justify-content-around" id="botones">
         <div class="col-6">
-          <button type="submit" id="accederCliente" class="btn btn-primary" [routerLink]="['/sesionCliente']" routerLinkActive="router-link-active" (click)="inicioSesion()">Ingresar como Cliente</button>
+          <button type="submit" id="accederCliente" class="btn btn-primary" routerLinkActive="router-link-active" (click)="inicioSesionCliente()">Ingresar como Cliente</button>
         </div>
         <div class="col-6">
-          <button type="submit" class="btn btn-primary" [routerLink]="['/sesionProductor']" routerLinkActive="router-link-active" (click)="inicioSesion()">Ingresar como Productor</button>
+          <button type="submit" class="btn btn-primary" routerLinkActive="router-link-active" (click)="inicioSesionProductor()">Ingresar como Productor</button>
         </div>
       </div>
     </div>

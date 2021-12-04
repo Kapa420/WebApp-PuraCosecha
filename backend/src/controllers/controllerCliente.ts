@@ -1,4 +1,5 @@
 import executeQuery from "../services/mysql.service";
+import jwt from 'jsonwebtoken';
 
 const obtenerClienteId = async(req, res, next) => {
   const {id} = req.params;
@@ -118,33 +119,43 @@ const registrarCliente = async (req, res, next) => {
           email, password ) VALUES
         (
           NULL, '${nombre}', '${apellido}', '${direccion}', '${telefono}',
-          '${email}',   '${password}')`);
-          res.status(201).json({
-            message: 'Usuario Creado',
-            id: response.insertId})
-          }
+          '${email}',   '${password}')`
+        );
+        res.status(201).json({
+          message: 'Usuario Creado',
+          id: response.insertId})
         }
+}
 
 const iniciarSesion = async (req, res, next) => {
-  const {email} = req.params;
-  try{
-    const response = await executeQuery(`
-      SELECT id_cliente,
-             nombre,
-             apellido,
-             direccion,
-             telefono,
-             email,
-             password
-      FROM cliente WHERE email = ${email}`);
-      const data = {
-      message: `${response.length} datos encontrados`,
-      data: response.length > 0 ? response[0] : null
-        };
-        res.json(data);
-    }catch(error){
-      next(error);
-    }
+ try {
+   const {email, password} = req.body;
+   const dataUser = await executeQuery(`SELECT * FROM cliente WHERE email = '${email}'`);
+   if (dataUser.length > 0 ) {
+     if(dataUser[0].password === password){
+       jwt.sign(dataUser[0], 'Karen', (error, token) => {
+         if (error){
+           next(error);
+         }else{
+           res.json({
+             user: {...dataUser[0], token},
+             statuscode: 2})
+         }
+       })
+     }else{
+       res.json({
+         message: "Contraseña incorrecta",
+         statuscode: 1});
+     }
+   }else {
+     res.json({
+       message: "No existe usuario",
+       statuscode: 0
+     })
+   }
+ } catch (error) {
+   next(error);
+ }
 }
 export{
   eliminarCliente,

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-light fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand">¡Bienvenido cliente!</a>
+      <a class="navbar-brand">¡Bienvenido {{cliente?.nombre}}</a>
       <a class="navbar-brand"><strong>Actualiza tus datos</strong></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -16,7 +16,7 @@
               <a class="nav-link active" aria-current="page" href="/sesionCliente">Volver a tu perfil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Cerrar sesión</a>
+                <a class="nav-link" (click)="CerrarSesion()">Cerrar sesión</a>
               </li>
           </ul>
         </div>
@@ -29,33 +29,33 @@
     <tbody>
         <tr>
             <td scope="col"><h6>Nombre:</h6></td>
-            <td scope="col">*Nombre del cliente</td>
+            <td scope="col">{{cliente?.nombre}}</td>
             <td scope="col"><input type="text" class="form-control" placeholder="Nuevo nombre" formControlName="nombre"></td>
         </tr>
         <tr class="table-active">
             <td><h6>Apellido:</h6></td>
-            <td>*Apellido del cliente</td>
+            <td>{{cliente?.apellido}}</td>
             <td scope="col"><input type="text" class="form-control" placeholder="Nuevo apellido" formControlName="apellido"></td>
         </tr>
         <tr>
             <td><h6>Dirección:</h6></td>
-            <td>*Dirección del cliente</td>
+            <td>{{cliente?.direccion}}</td>
             <td scope="col"><input type="text" class="form-control" placeholder="Nueva dirección" formControlName="direccion"></td>
         </tr>
         <tr class="table-active">
             <td scope="col"><h6>Teléfono:</h6></td>
-            <td scope="col">*Teléfono del cliente</td>
+            <td scope="col">{{cliente?.telefono}}</td>
             <td scope="col"><input type="text" class="form-control" placeholder="Nuevo teléfono" formControlName="telefono"></td>
         </tr>
         <tr>
             <td><h6>Email:</h6></td>
-            <td>*Email del cliente</td>
+            <td>{{cliente?.email}}</td>
             <td scope="col"><input type="text" class="form-control" placeholder="Nuevo email" formControlName="email"></td>
         </tr>
         <tr class="table-active">
             <td scope="col"><h6>Contraseña:</h6></td>
-            <td scope="col">*Contraseña del cliente</td>
-            <td scope="col"><input type="text" class="form-control" placeholder="Nueva contraseña" formControlName="contrasena"></td>
+            <td scope="col">{{cliente?.password}}</td>
+            <td scope="col"><input type="text" class="form-control" placeholder="Nueva contraseña" formControlName="password"></td>
         </tr>
     </tbody>
   </table>

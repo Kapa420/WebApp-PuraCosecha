@@ -1,17 +1,9 @@
-import executeQuery from "../services/mysql.service"
+import executeQuery from "../services/mysql.service";
+import jwt from 'jsonwebtoken';
+
 
 const obtenerProductores= async(req,res,next) => {
-    await executeQuery(
-    `SELECT id_productor,
-            nombre,
-            apellido,
-            poblacion,
-            direccion,
-            telefono,
-            email,
-            password
-            FROM productor
-            `).then(response => {
+    await executeQuery(`SELECT * FROM productor`).then(response => {
         const data = {
             message: `${response.length} datos encontrados`,
             data: response.length > 0 ? response : null
@@ -26,16 +18,7 @@ const obtenerProductor= async(req, res, next) => {
     const {id} = req.params;
     try{
         const response = await executeQuery(
-          `SELECT nombre,
-                  apellido,
-                  poblacion,
-                  direccion,
-                  telefono,
-                  email,
-                  tipoProducto,
-                  password
-          FROM productor
-          WHERE productor.id_productor = ${id}`);
+          `SELECT * FROM productor WHERE id_productor = ${id}`);
         const data = {
             message: `${response.length} datos encontrados`,
             data: response.length > 0 ? response[0] : null
@@ -69,11 +52,11 @@ const actualizarProductor=(req, res, next)  => {
     const {nombre, apellido, poblacion, direccion, telefono, email, password} = req.body;
     const {id} = req.params;
     executeQuery(`UPDATE productor SET nombre = '${nombre}',
-                                         apellido = '${apellido}'
+                                         apellido = '${apellido}',
                                          poblacion = '${poblacion}',
-                                         direccion = '${direccion},
-                                         telefono = '${telefono},
-                                         email = '${email},
+                                         direccion = '${direccion}',
+                                         telefono = '${telefono}',
+                                         email = '${email}',
                                          password = '${password}'
                                          WHERE id_productor = '${id}'`).then((response) =>{
         console.log(response);
@@ -83,17 +66,51 @@ const actualizarProductor=(req, res, next)  => {
     });
 
 }
-const eliminarProductor=(req, res, next) => {
+const eliminarProductor = (req, res, next) => {
     executeQuery(`DELETE FROM productor WHERE id_productor = '${req.params.id}'`).then((response) => {
         res.json({message: response.affectedRows > 0 ? 'deleted' : `No existe registro con id: ${req.params.id}`});
     }).catch((error) => {
         next(error)
     });
-
 }
 
-export {obtenerProductores,
+const iniciarSesion = async(req, res, next) => {
+  try {
+    const {email, password} = req.body;
+    const dataUser = await executeQuery(`SELECT * FROM productor WHERE email = '${email}'`);
+    if (dataUser.length > 0 ) {
+      if(dataUser[0].password === password){
+        jwt.sign(dataUser[0], 'Marlith', (error, token) => {
+          if (error){
+            next(error);
+          }else{
+            res.json({
+              user: {...dataUser[0], token},
+              statuscode: 2})
+          }
+        })
+      }else{
+        res.json({
+          message: "Contraseña incorrecta",
+          statuscode: 1});
+      }
+    }else {
+      res.json({
+        message: "No existe usuario",
+        statuscode: 0
+      })
+    }
+  } catch (error) {
+    next(error);
+  }
+ }
+
+
+export{
+  obtenerProductores,
   obtenerProductor,
   agregarProductor,
   actualizarProductor,
-  eliminarProductor}
+  eliminarProductor,
+  iniciarSesion
+}
