@@ -52,11 +52,11 @@ const actualizarProductor=(req, res, next)  => {
     const {nombre, apellido, poblacion, direccion, telefono, email, password} = req.body;
     const {id} = req.params;
     executeQuery(`UPDATE productor SET nombre = '${nombre}',
-                                         apellido = '${apellido}'
+                                         apellido = '${apellido}',
                                          poblacion = '${poblacion}',
-                                         direccion = '${direccion},
-                                         telefono = '${telefono},
-                                         email = '${email},
+                                         direccion = '${direccion}',
+                                         telefono = '${telefono}',
+                                         email = '${email}',
                                          password = '${password}'
                                          WHERE id_productor = '${id}'`).then((response) =>{
         console.log(response);
