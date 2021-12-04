@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-/*import { UsuarioService } from 'src/app/services/usuario.service';*/
+import { Router } from '@angular/router';
+import { ClientesAdminsModel } from 'src/app/models/clientes-admin';
 
 @Component({
   selector: 'app-sesion-clientes',
@@ -7,11 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sesion-clientes.component.scss']
 })
 export class SesionClientesComponent implements OnInit {
-public nombre: String | null="María"
-  constructor() { }
+
+
+  public cliente: ClientesAdminsModel | null = null;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-  /*  this.nombre=localStorage.getItem("nombre")*/
+    this.crearCliente();
+
   }
 
+  public crearCliente(){
+    const datos = localStorage.getItem('user');
+    this.cliente = datos ? JSON.parse(datos) : null;
+  }
+
+  public CerrarSesion() {
+    localStorage.clear();
+    this.router.navigate(['/']);
+  }
 }

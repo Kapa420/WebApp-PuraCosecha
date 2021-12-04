@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { ClientesService } from 'src/app/services/clientes-admin/clientes.service'
-import { ClientesAdminsModel } from 'src/app/models/clientes-admin'
+import { ClientesService } from 'src/app/services/clientes-admin/clientes.service';
+import { ClientesAdminsModel } from 'src/app/models/clientes-admin';
 
 @Component({
   selector: 'app-tabla-clientes-admin',
@@ -12,6 +12,7 @@ export class TablaClientesAdminComponent implements OnInit {
 
   @Output() alertData= new EventEmitter();
 
+  public showModal = false;
 
   public clientes: ClientesAdminsModel[] = [];
 

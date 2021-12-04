@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-light fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand">¡Bienvenido productor!</a>
+      <a class="navbar-brand">¡Bienvenido {{productor?.nombre}}!</a>
       <a class="navbar-brand"><strong>Actualizar datos</strong></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -16,7 +16,7 @@
               <a class="nav-link active" aria-current="page" href="/sesionProductor">Volver a tu perfil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Cerrar sesión</a>
+                <a class="nav-link" (clicl)="CerrarSesion()">Cerrar sesión</a>
               </li>
           </ul>
         </div>
@@ -29,38 +29,38 @@
     <tbody>
         <tr>
             <td scope="col"><h6>Nombre:</h6></td>
-            <td scope="col">*Nombre del productor</td>
+            <td scope="col">{{productor?.nombre}}</td>
             <td scope="col"><input type="text" class="form-control" placeholder="Nuevo nombre" formControlName="nombre"></td>
         </tr>
         <tr class="table-active">
             <td><h6>Apellido:</h6></td>
-            <td>*Apellido del productor</td>
+            <td>{{productor?.apellido}}</td>
             <td scope="col"><input type="text" class="form-control" placeholder="Nuevo apellido" formControlName="apellido"></td>
         </tr>
         <tr>
             <td><h6>Población:</h6></td>
-            <td>*Población del productor</td>
+            <td>{{productor?.poblacion}}</td>
             <td scope="col"><input type="text" class="form-control" placeholder="Nueva población" formControlName="poblacion"></td>
         </tr>
         <tr class="table-active">
             <td><h6>Dirección:</h6></td>
-            <td>*Dirección del productor</td>
+            <td>{{productor?.direccion}}</td>
             <td scope="col"><input type="text" class="form-control" placeholder="Nueva dirección" formControlName="direccion"></td>
         </tr>
         <tr>
             <td scope="col"><h6>Teléfono:</h6></td>
-            <td scope="col">*Teléfono del productor</td>
+            <td scope="col">{{productor?.telefono}}</td>
             <td scope="col"><input type="text" class="form-control" placeholder="Nuevo teléfono" formControlName="telefono"></td>
         </tr>
         <tr class="table-active">
             <td><h6>Email:</h6></td>
-            <td>*Email del cliente</td>
+            <td>{{productor?.email}}</td>
             <td scope="col"><input type="text" class="form-control" placeholder="Nuevo email" formControlName="email"></td>
         </tr>
         <tr>
             <td scope="col"><h6>Contraseña:</h6></td>
-            <td scope="col">*Contraseña del productor</td>
-            <td scope="col"><input type="text" class="form-control" placeholder="Nueva contraseña" formControlName="contrasena"></td>
+            <td scope="col">{{productor?.password}}</td>
+            <td scope="col"><input type="text" class="form-control" placeholder="Nueva contraseña" formControlName="password"></td>
         </tr>
     </tbody>
   </table>

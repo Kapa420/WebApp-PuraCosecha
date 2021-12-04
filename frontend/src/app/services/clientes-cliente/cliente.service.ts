@@ -15,6 +15,12 @@ export class ClienteService {
     return this.http.get(url).toPromise();
   }
 
+  public InicioSesion(datos: any): Promise<any> {
+    const url = `${environment.apiUrl}/iniciarSesionCliente`;
+    return this.http.post(url, datos).toPromise();
+
+  }
+
   public eliminarCliente(id: number): Promise<any> {
     const url = `${environment.apiUrl}/eliminarCliente/${id}`;
     return this.http.delete(url).toPromise();
