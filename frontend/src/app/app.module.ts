@@ -47,14 +47,16 @@ import { RegistroClienteComponent } from './components/registro-cliente/registro
     SesionClientesComponent,
     SesionProductoresComponent,
     NotfoundComponent,
+    FooterComponent,
     DatosClientesComponent,
     ActualizarDatosComponent,
     DatosProductoresComponent,
     ActDatosProductoresComponent,
     FooterComponent,
     RegistroProductoresComponent,
-    RegistroClienteComponent
-  
+    RegistroClienteComponent,
+    BotonModalAgregarProductoComponent,
+    FormularioAgregarProductoComponent
   ],
   imports: [
     BrowserModule,

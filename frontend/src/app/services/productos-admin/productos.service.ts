@@ -17,4 +17,13 @@ export class ProductosService {
     const url = `${environment.apiUrl}/obtenerProductosAdmins`;
     return this.http.get(url).toPromise();
   }
+
+  public agregarProductosAdmins(producto: any){
+    const url = `${environment.apiUrl}/agregarProductoAdmins`;
+    return this.http.post(url, producto).toPromise();
+  }
+  public eliminarProductosAdmins(id: number): Promise<any> {
+    const url = `${environment.apiUrl}/eliminarProducto/${id}`;
+    return this.http.delete(url).toPromise();
+  }
 }

@@ -58,6 +58,7 @@ const agregarProductoAdmins = async (req, res, next) => {
         '${categoria_producto}',
         '${precio}',
         '${id_productor}'
+      )
         `);
       res.status(201).json({
         message: 'created',
@@ -68,7 +69,7 @@ const agregarProductoAdmins = async (req, res, next) => {
 }}
 
 const eliminarProducto = async (req, res, next) => {
-  executeQuery(`DELETE FROM producto WHERE idProducto = '${req.params.id}'`).then((response) => {res
+  executeQuery(`DELETE FROM producto WHERE id_producto = '${req.params.id}'`).then((response) => {res
 .json({
       message: response.affectedRows > 0 ? `deleted`: 'No existe registro con id: ${req.params.id}'}
 );

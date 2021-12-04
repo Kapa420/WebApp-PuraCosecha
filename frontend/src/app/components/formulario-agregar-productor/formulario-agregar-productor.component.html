@@ -1,32 +1,37 @@
-<form class="row g-3">
+<form [formGroup] = "formGroup">
   <div class="row g-3">
     <div class="col-md-6">
-      <label for="inputNombreCliente" class="form-label"> Nombre </label>
-      <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+      <label for="inputNombreProductorAdmin" class="form-label"> Nombre </label>
+      <input type="text" class="form-control" id="noombreProductorAdmin" placeholder="Nombre" aria-label="Nombre" formControlName='nombre'>
     </div>
     <div class="col-md-6">
-      <label for="inputApellidoCliente" class="form-label"> Apellido </label>
-      <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+      <label for="inputApellidoProductorAdmin" class="form-label"> Apellido </label>
+      <input type="text" class="form-control" id="apellidoProductorAdmin" placeholder="Apellido" aria-label="Apellido" formControlName='apellido'>
     </div>
   </div>
   <div class="col-md-12">
-    <label for="inputEmailCliente" class="form-label">Email</label>
-    <input type="email" class="form-control" id="emailCliente" placeholder="usuario@email.com">
+    <label for="inputEmailProductorAdmin" class="form-label">Email</label>
+    <input type="email" class="form-control" id="emailProductorAdmin" placeholder="usuario@email.com" formControlName='email'>
+    <div class="col-md-12">
+      <label for="inputDireccionProductorAdmin" class="form-label">Direccion</label>
+      <input type="text" class="form-control" id="inputDireccionProductorAdmin" placeholder="P. Sherman Calle Wallaby 42" formControlName='direccion'>
   </div>
-  <div class="col-12">
-    <label for="inputDireccionCliente" class="form-label">Direccion</label>
-    <input type="text" class="form-control" id="inputDireccionCliente" placeholder="P. Sherman Calle Wallaby 42">
+</div>
+  <div class="row g-3">
+    <div class="col-6">
+      <label for="inputPoblacion" class="form-label">Poblacion</label>
+      <input type="text" class="form-control" id="Poblacion" placeholder="Bogota" formControlName='poblacion'>
+    </div>
+    <div class="col-6">
+      <label for="inputTelefonoProductorAdmin" class="form-label">Telefono</label>
+      <input type="text" class="form-control" id="inputTelefonoProductorAdmin" placeholder="1233456" formControlName='telefono'>
+    </div>
   </div>
-  <div class="col-md-12">
-    <label for="inputCiudadCliente" class="form-label">Ciudad</label>
-    <input type="text" class="form-control" id="inputCiudadCliente" placeholder="Bogotá">
-  </div>
-  <div class="col-12">
-    <label for="inputTelefonoCliente" class="form-label">Telefono</label>
-    <input type="text" class="form-control" id="inputTelefonoCliente" placeholder="1233456">
-  </div>
-  <div class="col-md-12">
-    <label for="passwordCliente" class="form-label">Contraseña</label>
-    <input type="password" class="form-control" id="passwordCliente">
+    <div class="col-12">
+      <label for="passwordProductorAdmin" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="passwordProductorAdmin" formControlName='password'>
+    </div>
+  <div class="botonGuardar">
+    <button type="submit" class="btn btn-outline-success" [disabled]="formGroup.invalid" (click)="agregarProductor()">Crear cliente</button>
   </div>
 </form>
