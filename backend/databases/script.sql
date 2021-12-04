@@ -1,65 +1,69 @@
-CREATE database if NOT EXISTS appweb1;
-
-CREATE TABLE if NOT EXISTS cliente
+create or replace table cliente
 (
-    id_cliente BIGINT AUTO_INCREMENT
-        PRIMARY KEY,
-    nombre     VARCHAR(50)  NOT NULL,
-    apellido   VARCHAR(50)  NOT NULL,
-    direccion  VARCHAR(100) NULL,
-    telefono   BIGINT       NOT NULL,
-    email      VARCHAR(100) NOT NULL,
-    password   VARCHAR(50)  NOT NULL
+    id_cliente bigint auto_increment
+        primary key,
+    nombre     varchar(50)  not null,
+    apellido   varchar(50)  not null,
+    direccion  varchar(100) null,
+    telefono   bigint       not null,
+    email      varchar(100) not null,
+    password   varchar(50)  not null,
+    constraint cliente_email_uindex
+        unique (email)
 );
 
-CREATE TABLE if NOT EXISTS factura
+create or replace table factura
 (
-    id_factura BIGINT AUTO_INCREMENT
-        PRIMARY KEY,
-    id_cliente BIGINT NOT NULL,
-    fecha      DATE   NOT NULL,
-    CONSTRAINT factura_cliente_id_cliente_fk
-        FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente)
+    id_factura bigint auto_increment
+        primary key,
+    id_cliente bigint not null,
+    fecha      date   not null,
+    constraint factura_cliente_id_cliente_fk
+        foreign key (id_cliente) references cliente (id_cliente)
+            on update cascade on delete cascade
 );
 
-CREATE TABLE if NOT EXISTS productor
+create or replace table productor
 (
-    id_productor BIGINT AUTO_INCREMENT
-        PRIMARY KEY,
-    nombre       VARCHAR(50)  NOT NULL,
-    apellido     VARCHAR(100) NULL,
-    poblacion    VARCHAR(100) NULL,
-    direccion    VARCHAR(100) NULL,
-    telefono     BIGINT       NOT NULL,
-    email        VARCHAR(100) NULL,
-    password     VARCHAR(200) NULL
+    id_productor bigint auto_increment
+        primary key,
+    nombre       varchar(50)  not null,
+    apellido     varchar(100) null,
+    poblacion    varchar(100) null,
+    direccion    varchar(100) null,
+    telefono     bigint       not null,
+    email        varchar(100) not null,
+    password     varchar(200) null,
+    constraint productor_email_uindex
+        unique (email)
 );
 
-CREATE TABLE if NOT EXISTS producto
+create or replace table producto
 (
-    id_producto        BIGINT AUTO_INCREMENT,
-    nombre_producto    VARCHAR(50) NOT NULL,
-    categoria_producto VARCHAR(50) NULL,
-    precio             INT         NOT NULL,
-    id_productor       BIGINT      NULL,
-    CONSTRAINT producto_id_producto_uindex
+    id_producto        bigint auto_increment
+        primary key,
+    nombre_producto    varchar(50) not null,
+    categoria_producto varchar(50) null,
+    precio             int         not null,
+    id_productor       bigint      null,
+    constraint producto_id_producto_uindex
         unique (id_producto),
-    CONSTRAINT producto_productor_id_productor_fk
-        FOREIGN KEY (id_productor) REFERENCES productor (id_productor)
+    constraint producto_productor_id_productor_fk
+        foreign key (id_productor) references productor (id_productor)
+            on update cascade on delete cascade
 );
 
-alter TABLE producto
-    add PRIMARY KEY (id_producto);
-
-CREATE TABLE if NOT EXISTS detalle
+create or replace table detalle
 (
-    id_detalle  BIGINT AUTO_INCREMENT
-        PRIMARY KEY,
-    id_producto BIGINT NOT NULL,
-    id_factura  BIGINT NOT NULL,
-    cantidad    int    NOT NULL,
-    CONSTRAINT detalle_factura_id_factura_fk
-        FOREIGN KEY (id_factura) REFERENCES factura (id_factura),
-    CONSTRAINT detalle_producto_id_producto_fk
-        FOREIGN KEY (id_producto) REFERENCES producto (id_producto)
+    id_detalle  bigint auto_increment
+        primary key,
+    id_producto bigint not null,
+    id_factura  bigint not null,
+    cantidad    int    not null,
+    constraint detalle_factura_id_factura_fk
+        foreign key (id_factura) references factura (id_factura)
+            on update cascade on delete cascade,
+    constraint detalle_producto_id_producto_fk
+        foreign key (id_producto) references producto (id_producto)
+            on update cascade on delete cascade
 );
